@@ -1,0 +1,10 @@
+my\security\SecurityInitializer.class
+my\web\CarListController.class
+my\servlet\ServletContainerInitializerImpl.class
+my\web\WebConfig.class
+my\web\AppUserListController.class
+my\web\HomeController.class
+my\web\RegistrationController.class
+my\security\AuthenticationService.class
+my\security\WebSecurityConfig.class
+my\web\AddCarController.class
