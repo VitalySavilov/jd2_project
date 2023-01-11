@@ -15,6 +15,7 @@ public class CarReadMapper implements Mapper<Car, CarReadDto> {
     @Override
     public CarReadDto mapFrom(Car object) {
         return new CarReadDto(
+                object.getId(),
                 object.getCarMark().getName(),
                 object.getCarModel().getName(),
                 object.getType().getName(),

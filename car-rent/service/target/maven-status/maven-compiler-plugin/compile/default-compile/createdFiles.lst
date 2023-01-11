@@ -14,6 +14,7 @@ my\service\ServiceConfig.class
 my\mapper\CarFormDataMapper.class
 my\dto\AppUserCreateDto.class
 my\dto\AppUserReadDto.class
+my\dto\CarFilter.class
 my\mapper\Mapper.class
 my\dto\PaymentDto.class
 my\mapper\AppUserCreateMapper.class
