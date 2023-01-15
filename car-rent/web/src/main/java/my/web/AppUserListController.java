@@ -1,9 +1,8 @@
 package my.web;
 
 import lombok.RequiredArgsConstructor;
-import my.dto.AppUserReadDto;
-import my.dto.CarReadDto;
-import my.dto.PageResponse;
+import my.dto.app_user.AppUserReadDto;
+import my.dto.page_response.PageResponse;
 import my.service.AppUserService;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;

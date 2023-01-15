@@ -22,11 +22,11 @@ public class QPayment extends EntityPathBase<Payment> {
 
     public static final QPayment payment = new QPayment("payment");
 
-    public final QAppUser appUser;
+    public final QAppOrder appOrder;
 
     public final NumberPath<Long> id = createNumber("id", Long.class);
 
-    public final NumberPath<Double> sum = createNumber("sum", Double.class);
+    public final DatePath<java.sql.Date> paymentDate = createDate("paymentDate", java.sql.Date.class);
 
     public QPayment(String variable) {
         this(Payment.class, forVariable(variable), INITS);
@@ -46,7 +46,7 @@ public class QPayment extends EntityPathBase<Payment> {
 
     public QPayment(Class<? extends Payment> type, PathMetadata metadata, PathInits inits) {
         super(type, metadata, inits);
-        this.appUser = inits.isInitialized("appUser") ? new QAppUser(forProperty("appUser"), inits.get("appUser")) : null;
+        this.appOrder = inits.isInitialized("appOrder") ? new QAppOrder(forProperty("appOrder"), inits.get("appOrder")) : null;
     }
 
 }

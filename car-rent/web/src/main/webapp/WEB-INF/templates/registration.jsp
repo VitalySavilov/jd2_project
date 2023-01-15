@@ -52,6 +52,13 @@
                aria-describedby="nameHelp">
         <div id="nameHelp" class="form-text">Enter password</div>
     </div>
+    <%--    card--%>
+    <div class="col-md-4">
+        <label for="card" class="form-label">payment card number</label>
+        <input type="text" name="cardNumber" class="form-control" id="card"
+               aria-describedby="nameHelp">
+        <div id="nameHelp" class="form-text">Enter payment card number</div>
+    </div>
 
     <div class="col-12">
         <button class="btn btn-primary" type="submit">Submit form</button>

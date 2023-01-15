@@ -3,42 +3,50 @@
 
 <jsp:include page="_header.jsp"/>
 
-<h1>Cars</h1>
+<div class="container">
 
-<form action="${url}">
-    <jsp:include page="_pagination.jsp"/>
-
-    <div class="col-md-4">
-        <label for="inputMark" class="form-label">Mark</label>
-        <input type="text" class="form-control" name="mark" value="${filter.mark}" id="inputMark">
-    </div>
-    <div class="col-md-4">
-        <label for="inputType" class="form-label">Type</label>
-        <input type="text" class="form-control" name="type" value="${filter.type}" id="inputType">
+    <div>
+        <h1>Cars</h1>
     </div>
 
-    <button type="submit" class="btn btn-light">filter</button>
-</form>
+    <form action="${url}">
 
-<table style="width:100%" class="table">
-    <tr>
-        <th>Model</th>
-        <th>Year</th>
-        <th>Type</th>
-        <th>Color</th>
-        <th>Price</th>
-    </tr>
-    <c:forEach items="${data.content}" var="car">
+        <jsp:include page="_pagination.jsp"/>
+
+        <div class="col-md-4">
+            <label for="inputMark" class="form-label">Mark</label>
+            <input type="text" class="form-control" name="mark" value="${filter.mark}" id="inputMark">
+        </div>
+        <div class="col-md-4">
+            <label for="inputType" class="form-label">Type</label>
+            <input type="text" class="form-control" name="type" value="${filter.type}" id="inputType">
+        </div>
+
+        <button type="submit" class="btn btn-light">filter</button>
+    </form>
+
+    <table class="table">
         <tr>
-            <td><c:out value="${car.carMark} ${car.carModel}"/></td>
-            <td><c:out value="${car.year}"/></td>
-            <td><c:out value="${car.type}"/></td>
-            <td><c:out value="${car.color}"/></td>
-            <td><c:out value="${car.price}"/></td>
-            <td><a class="btn btn-light" href="#" role="button">Details</a></td>
+            <th>Model</th>
+            <th>Year</th>
+            <th>Type</th>
+            <th>Color</th>
+            <th>Price</th>
+            <th></th>
         </tr>
-    </c:forEach>
-</table>
+        <c:forEach items="${data.content}" var="car">
+            <tr>
+                <td><c:out value="${car.carMark} ${car.carModel}"/></td>
+                <td><c:out value="${car.year}"/></td>
+                <td><c:out value="${car.type}"/></td>
+                <td><c:out value="${car.color}"/></td>
+                <td><c:out value="${car.price}"/></td>
+                <td><a class="btn btn-light" href="${pageContext.request.contextPath}/car/${car.id}" role="button">Details</a>
+                </td>
+            </tr>
+        </c:forEach>
+    </table>
+</div>
 
 <jsp:include page="_footer.jsp"/>
 

@@ -47,5 +47,8 @@ public class Car {
     @OneToMany(mappedBy = "car")
     @Builder.Default
     private List<AppOrder> orders = new ArrayList<>();
+    @Builder.Default
+    @Column(name = "C_IS_DEL")
+    private boolean isDeleted = false;
 }
 

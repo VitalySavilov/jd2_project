@@ -3,7 +3,9 @@ my\model\Payment$PaymentBuilder.class
 my\model\AppOrder.class
 my\dao\CarModelRepository.class
 my\model\PaymentCard$PaymentCardBuilder.class
+my\dao\AppOrderRepository.class
 my\model\CarType$CarTypeBuilder.class
+my\dao\PaymentCardRepository.class
 my\model\AppUserRole.class
 my\model\QAppUserRole.class
 my\model\CarMark$CarMarkBuilder.class
@@ -38,6 +40,7 @@ my\model\CarImage$CarImageBuilder.class
 my\model\PaymentCard.class
 my\dao\CarImageRepository.class
 my\model\Car.class
+my\dao\PaymentRepository.class
 my\model\AppUserInfo.class
 my\model\Payment.class
 my\model\QPayment.class

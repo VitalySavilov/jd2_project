@@ -1,7 +1,7 @@
 package my.web;
 
 import lombok.RequiredArgsConstructor;
-import my.dto.CarCreateDto;
+import my.dto.car.CarCreateDto;
 import my.service.CarService;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -17,7 +17,7 @@ public class AddCarController {
 
     @PostMapping("/new-car")
     public String addCar(CarCreateDto carCreateDto) {
-        carService.addCar(carCreateDto);
+        carService.create(carCreateDto);
         return "redirect:/";
     }
 

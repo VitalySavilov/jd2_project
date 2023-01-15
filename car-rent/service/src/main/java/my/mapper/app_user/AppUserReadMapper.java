@@ -1,7 +1,8 @@
-package my.mapper;
+package my.mapper.app_user;
 
 import lombok.RequiredArgsConstructor;
-import my.dto.AppUserReadDto;
+import my.dto.app_user.AppUserReadDto;
+import my.mapper.Mapper;
 import my.model.AppUser;
 import org.springframework.stereotype.Component;
 
@@ -15,10 +16,7 @@ public class AppUserReadMapper implements Mapper<AppUser, AppUserReadDto> {
                 object.getId(),
                 object.getAppUserInfo(),
                 object.getUsername(),
-                object.getRoles(),
-                object.getOrders(),
-                object.getPaymentCards(),
-                object.getPayments()
+                object.getRoles()
         );
     }
 }

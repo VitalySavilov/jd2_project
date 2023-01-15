@@ -7,9 +7,13 @@ import org.springframework.data.jpa.repository.EntityGraph;
 import org.springframework.data.querydsl.QuerydslPredicateExecutor;
 import org.springframework.data.repository.PagingAndSortingRepository;
 
+import java.util.Optional;
+
 public interface CarRepository extends PagingAndSortingRepository<Car, Long>, QuerydslPredicateExecutor<Car> {
 
     @EntityGraph(attributePaths = {"carModel", "images", "carMark", "type"})
     Page<Car> findAll(Pageable pageable);
+
+    Optional<Car> findCarById (long id);
 
 }

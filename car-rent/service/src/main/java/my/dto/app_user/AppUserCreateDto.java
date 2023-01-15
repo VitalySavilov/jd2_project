@@ -1,4 +1,4 @@
-package my.dto;
+package my.dto.app_user;
 
 import lombok.Value;
 
@@ -13,4 +13,5 @@ public class AppUserCreateDto {
     Date birthDate;
     String email;
     String telNumber;
+    String cardNumber;
 }

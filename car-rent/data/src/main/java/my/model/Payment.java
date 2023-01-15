@@ -3,6 +3,7 @@ package my.model;
 import lombok.*;
 
 import javax.persistence.*;
+import java.sql.Date;
 
 @Entity
 @Getter
@@ -16,9 +17,10 @@ public class Payment {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "P_ID")
     private Long id;
-    @Column(name = "P_SUM")
-    private Double sum;
+    @Column(name = "P_DATE")
+    private Date paymentDate;
     @ManyToOne
-    @JoinColumn(name = "USER_ID")
-    private AppUser appUser;
+    @JoinColumn(name = "O_ID")
+    private AppOrder appOrder;
+
 }

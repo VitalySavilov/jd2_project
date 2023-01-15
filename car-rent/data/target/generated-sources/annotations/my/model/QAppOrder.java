@@ -26,7 +26,17 @@ public class QAppOrder extends EntityPathBase<AppOrder> {
 
     public final QCar car;
 
+    public final DatePath<java.sql.Date> endDate = createDate("endDate", java.sql.Date.class);
+
     public final NumberPath<Long> id = createNumber("id", Long.class);
+
+    public final BooleanPath isCompleted = createBoolean("isCompleted");
+
+    public final NumberPath<Double> orderSum = createNumber("orderSum", Double.class);
+
+    public final ListPath<Payment, QPayment> payments = this.<Payment, QPayment>createList("payments", Payment.class, QPayment.class, PathInits.DIRECT2);
+
+    public final DatePath<java.sql.Date> startDate = createDate("startDate", java.sql.Date.class);
 
     public QAppOrder(String variable) {
         this(AppOrder.class, forVariable(variable), INITS);

@@ -1,4 +1,4 @@
-package my.dto;
+package my.dto.app_user;
 
 import lombok.Value;
 import my.model.*;
@@ -11,7 +11,4 @@ public class AppUserReadDto {
     AppUserInfo appUserInfo;
     String username;
     List<AppUserRole> roles;
-    List<AppOrder> orders;
-    List<PaymentCard> paymentCards;
-    List<Payment> payments;
 }

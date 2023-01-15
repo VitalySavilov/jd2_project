@@ -1,4 +1,4 @@
-package my.dto;
+package my.dto.filter;
 
 import lombok.Value;
 

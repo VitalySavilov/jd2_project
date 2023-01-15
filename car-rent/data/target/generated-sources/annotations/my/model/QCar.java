@@ -36,6 +36,8 @@ public class QCar extends EntityPathBase<Car> {
 
     public final ListPath<CarImage, QCarImage> images = this.<CarImage, QCarImage>createList("images", CarImage.class, QCarImage.class, PathInits.DIRECT2);
 
+    public final BooleanPath isDeleted = createBoolean("isDeleted");
+
     public final ListPath<AppOrder, QAppOrder> orders = this.<AppOrder, QAppOrder>createList("orders", AppOrder.class, QAppOrder.class, PathInits.DIRECT2);
 
     public final NumberPath<Long> power = createNumber("power", Long.class);

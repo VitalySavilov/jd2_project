@@ -1,9 +1,9 @@
 package my.web;
 
 import lombok.RequiredArgsConstructor;
-import my.dto.CarFilter;
-import my.dto.CarReadDto;
-import my.dto.PageResponse;
+import my.dto.filter.CarFilter;
+import my.dto.car.CarReadDto;
+import my.dto.page_response.PageResponse;
 import my.service.CarImageService;
 import my.service.CarService;
 import org.springframework.data.domain.Page;

@@ -1,7 +1,7 @@
 package my.web;
 
 import lombok.RequiredArgsConstructor;
-import my.dto.AppUserCreateDto;
+import my.dto.app_user.AppUserCreateDto;
 import my.service.AppUserService;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;

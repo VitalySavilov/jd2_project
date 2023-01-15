@@ -1,15 +1,14 @@
-package my.mapper;
+package my.mapper.app_user;
 
 import lombok.RequiredArgsConstructor;
-import my.dao.AppUserRoleRepository;
-import my.dto.AppUserCreateDto;
+import my.dto.app_user.AppUserCreateDto;
+import my.mapper.Mapper;
 import my.model.AppUser;
 import my.model.AppUserInfo;
 import org.springframework.stereotype.Component;
 @Component
 @RequiredArgsConstructor
 public class AppUserCreateMapper implements Mapper<AppUserCreateDto, AppUser> {
-    private final AppUserRoleRepository appUserRoleRepository;
 
     @Override
     public AppUser mapFrom(AppUserCreateDto object) {
@@ -24,7 +23,6 @@ public class AppUserCreateMapper implements Mapper<AppUserCreateDto, AppUser> {
                 .username(object.getUsername())
                 .password(object.getPassword())
                 .build();
-        appUser.getRoles().add(appUserRoleRepository.findAppUserRoleByName("USER"));
         return appUser;
     }
 }

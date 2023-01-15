@@ -1,7 +1,8 @@
-package my.mapper;
+package my.mapper.car;
 
 import lombok.RequiredArgsConstructor;
-import my.dto.CarReadDto;
+import my.dto.car.CarReadDto;
+import my.mapper.Mapper;
 import my.model.Car;
 import my.model.CarImage;
 import org.springframework.stereotype.Component;

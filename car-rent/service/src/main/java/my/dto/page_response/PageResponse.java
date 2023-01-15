@@ -1,4 +1,4 @@
-package my.dto;
+package my.dto.page_response;
 
 import lombok.Value;
 import org.springframework.data.domain.Page;

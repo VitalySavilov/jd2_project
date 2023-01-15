@@ -32,8 +32,6 @@ public class QAppUser extends EntityPathBase<AppUser> {
 
     public final ListPath<PaymentCard, QPaymentCard> paymentCards = this.<PaymentCard, QPaymentCard>createList("paymentCards", PaymentCard.class, QPaymentCard.class, PathInits.DIRECT2);
 
-    public final ListPath<Payment, QPayment> payments = this.<Payment, QPayment>createList("payments", Payment.class, QPayment.class, PathInits.DIRECT2);
-
     public final ListPath<AppUserRole, QAppUserRole> roles = this.<AppUserRole, QAppUserRole>createList("roles", AppUserRole.class, QAppUserRole.class, PathInits.DIRECT2);
 
     public final StringPath username = createString("username");

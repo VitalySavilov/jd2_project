@@ -56,6 +56,7 @@
                 T_ID          BIGINT                NULL,
                 M_ID          BIGINT                NOT NULL,
                 MARK_ID       BIGINT                NOT NULL,
+                C_IS_DEL      BIT(1)                NOT NULL,
                 CONSTRAINT pk_t_car PRIMARY KEY (C_ID)
             );
 
@@ -108,6 +109,7 @@
                 USER_NAME     VARCHAR(255) NULL,
                 USER_PASSWORD VARCHAR(255) NULL,
                 INFO_ID       BIGINT       NULL,
+                USER_IS_DEL   BIT(1)       NULL,
                 CONSTRAINT pk_t_user PRIMARY KEY (USER_ID)
             );
 
@@ -175,9 +177,13 @@
         <sql>
             CREATE TABLE t_app_order
             (
-                O_ID    BIGINT AUTO_INCREMENT NOT NULL,
-                USER_ID VARCHAR(255)          NULL,
-                C_ID    BIGINT                NULL,
+                O_ID           BIGINT AUTO_INCREMENT NOT NULL,
+                O_IS_COMPLETED BIT(1)                NOT NULL,
+                O_START        date                  NULL,
+                O_END          date                  NULL,
+                O_SUM          DOUBLE                NULL,
+                USER_ID        VARCHAR(255)          NULL,
+                C_ID           BIGINT                NULL,
                 CONSTRAINT pk_t_app_order PRIMARY KEY (O_ID)
             );
 
@@ -194,14 +200,14 @@
         <sql>
             CREATE TABLE t_payment
             (
-                P_ID    BIGINT AUTO_INCREMENT NOT NULL,
-                P_SUM   DOUBLE                NULL,
-                USER_ID VARCHAR(255)          NULL,
+                P_ID   BIGINT AUTO_INCREMENT NOT NULL,
+                P_DATE date                  NULL,
+                O_ID   BIGINT                NULL,
                 CONSTRAINT pk_t_payment PRIMARY KEY (P_ID)
             );
 
             ALTER TABLE t_payment
-                ADD CONSTRAINT FK_T_PAYMENT_ON_USER FOREIGN KEY (USER_ID) REFERENCES t_user (USER_ID);
+                ADD CONSTRAINT FK_T_PAYMENT_ON_O FOREIGN KEY (O_ID) REFERENCES t_app_order (O_ID);
         </sql>
     </changeSet>
 

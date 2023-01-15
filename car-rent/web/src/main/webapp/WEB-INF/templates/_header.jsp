@@ -27,7 +27,7 @@
                     <a class="nav-link" href="${pageContext.request.contextPath}/registration">Registration</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="${pageContext.request.contextPath}/user">User</a>
+                    <a class="nav-link" href="${pageContext.request.contextPath}/payments">Payments</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="${pageContext.request.contextPath}/order">Order</a>
@@ -40,7 +40,7 @@
                         <li><a class="dropdown-item" href="${pageContext.request.contextPath}/new-car">New Car</a></li>
                         <li><a class="dropdown-item" href="${pageContext.request.contextPath}/car">Car</a></li>
                         <li><a class="dropdown-item" href="${pageContext.request.contextPath}/users">Users</a></li>
-                        <li><a class="dropdown-item" href="${pageContext.request.contextPath}/users">Orders</a></li>
+                        <li><a class="dropdown-item" href="${pageContext.request.contextPath}/orders">Orders</a></li>
                         <li><a class="dropdown-item" href="${pageContext.request.contextPath}/users">Admin</a></li>
                     </ul>
                 </li>

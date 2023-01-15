@@ -1,3 +1,4 @@
+D:\work\project-repository\car-rent\data\src\main\java\my\dao\PaymentRepository.java
 D:\work\project-repository\car-rent\data\src\main\java\my\dao\CarRepository.java
 D:\work\project-repository\car-rent\data\src\main\java\my\model\Car.java
 D:\work\project-repository\car-rent\data\src\main\java\my\dao\CarImageRepository.java
@@ -12,6 +13,8 @@ D:\work\project-repository\car-rent\data\src\main\java\my\dao\AppUserRoleReposit
 D:\work\project-repository\car-rent\data\src\main\java\my\model\Fuel.java
 D:\work\project-repository\car-rent\data\src\main\java\my\DataConfig.java
 D:\work\project-repository\car-rent\data\src\main\java\my\model\AppUser.java
+D:\work\project-repository\car-rent\data\src\main\java\my\dao\PaymentCardRepository.java
+D:\work\project-repository\car-rent\data\src\main\java\my\dao\AppOrderRepository.java
 D:\work\project-repository\car-rent\data\src\main\java\my\model\CarMark.java
 D:\work\project-repository\car-rent\data\src\main\java\my\model\Payment.java
 D:\work\project-repository\car-rent\data\src\main\java\my\model\AppUserRole.java
