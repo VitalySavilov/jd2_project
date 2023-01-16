@@ -57,7 +57,7 @@
                 T_ID          BIGINT                NULL,
                 M_ID          BIGINT                NOT NULL,
                 MARK_ID       BIGINT                NOT NULL,
-                C_IS_DEL      BIT(1)                NOT NULL,
+                C_IS_BUSY     BIT(1)                NOT NULL,
                 CONSTRAINT pk_t_car PRIMARY KEY (C_ID)
             );
 
@@ -110,7 +110,6 @@
                 USER_NAME     VARCHAR(255) NULL,
                 USER_PASSWORD VARCHAR(255) NULL,
                 INFO_ID       BIGINT       NULL,
-                USER_IS_DEL   BIT(1)       NULL,
                 CONSTRAINT pk_t_user PRIMARY KEY (USER_ID)
             );
 

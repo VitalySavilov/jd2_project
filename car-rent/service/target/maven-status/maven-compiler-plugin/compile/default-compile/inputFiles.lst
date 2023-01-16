@@ -1,10 +1,8 @@
 D:\work\project-repository\car-rent\service\src\main\java\my\mapper\car_mark\CarMarkCreateMapper.java
 D:\work\project-repository\car-rent\service\src\main\java\my\service\RoleService.java
-D:\work\project-repository\car-rent\service\src\main\java\my\mapper\CarFormDataMapper.java
 D:\work\project-repository\car-rent\service\src\main\java\my\service\CarMarkService.java
 D:\work\project-repository\car-rent\service\src\main\java\my\dto\payment\PaymentReadDto.java
 D:\work\project-repository\car-rent\service\src\main\java\my\service\CarModelService.java
-D:\work\project-repository\car-rent\service\src\main\java\my\dto\CarFormDataDto.java
 D:\work\project-repository\car-rent\service\src\main\java\my\mapper\Mapper.java
 D:\work\project-repository\car-rent\service\src\main\java\my\dto\car\CarCreateDto.java
 D:\work\project-repository\car-rent\service\src\main\java\my\dto\page_response\PageResponse.java

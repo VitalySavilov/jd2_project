@@ -38,7 +38,4 @@ public class AppUser {
     @OneToMany(mappedBy = "appUser")
     @Builder.Default
     private List<PaymentCard> paymentCards = new ArrayList<>();
-//    @Column(name = "USER_IS_DEL")
-//    @Builder.Default
-//    private boolean isDeleted = false;
 }

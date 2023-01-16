@@ -74,5 +74,4 @@ public class CarService {
     public long getCarCount() {
         return carRepository.count();
     }
-
 }

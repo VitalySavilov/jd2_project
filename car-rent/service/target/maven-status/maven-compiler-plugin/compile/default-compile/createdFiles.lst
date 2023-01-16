@@ -7,7 +7,6 @@ my\dto\app_user\AppUserCreateDto.class
 my\service\AppOrderService.class
 my\dto\payment\PaymentReadDto.class
 my\service\CarTypeService.class
-my\mapper\CarFormDataMapper.class
 my\mapper\car_mark\CarMarkCreateMapper.class
 my\mapper\payment_card\PaymentCardReadMapper.class
 my\mapper\Mapper.class
@@ -23,7 +22,6 @@ my\service\CarMarkService.class
 my\dto\app_user\AppUserReadDto.class
 my\service\AppUserService.class
 my\mapper\car_image\CarImageCreateMapper.class
-my\dto\CarFormDataDto.class
 my\mapper\car_type\CarTypeCreateMapper.class
 my\mapper\app_user\AppUserReadMapper.class
 my\service\ServiceConfig.class

@@ -9,4 +9,6 @@ public interface AppUserRoleRepository extends CrudRepository<AppUserRole, Long>
 
     AppUserRole findAppUserRoleByName(String name);
 
+    List<AppUserRole> findAll();
+
 }

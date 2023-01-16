@@ -13,6 +13,6 @@ public class RoleService {
     private final AppUserRoleRepository appUserRoleRepository;
 
     public List<AppUserRole> getAllRoles() {
-        return (List<AppUserRole>) appUserRoleRepository.findAll();
+        return appUserRoleRepository.findAll();
     }
 }
