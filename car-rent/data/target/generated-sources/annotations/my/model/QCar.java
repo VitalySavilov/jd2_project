@@ -44,6 +44,8 @@ public class QCar extends EntityPathBase<Car> {
 
     public final NumberPath<Double> price = createNumber("price", Double.class);
 
+    public final StringPath regNumber = createString("regNumber");
+
     public final QCarType type;
 
     public final StringPath year = createString("year");

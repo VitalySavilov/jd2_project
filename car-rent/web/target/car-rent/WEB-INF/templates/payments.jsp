@@ -6,7 +6,7 @@
 <div class="container">
 
     <div>
-        <h1>Orders</h1>
+        <h1>Payments</h1>
     </div>
 
     <form action="${url}">

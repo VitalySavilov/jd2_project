@@ -30,15 +30,18 @@ public class PaymentService {
                 .paymentDate(Date.valueOf(LocalDate.now()))
                 .appOrder(order)
                 .build();
-
-        return paymentReadMapper.mapFrom(paymentRepository.save(payment));
+        return paymentReadMapper
+                .mapFrom(paymentRepository.save(payment));
     }
 
     public Page<PaymentReadDto> getAll(Pageable pageable) {
-        return paymentRepository.findAll(pageable).map(paymentReadMapper::mapFrom);
+        return paymentRepository.findAll(pageable)
+                .map(paymentReadMapper::mapFrom);
     }
 
     public PaymentReadDto getPaymentById(long id) {
-        return paymentRepository.findById(id).map(paymentReadMapper::mapFrom).orElseThrow();
+        return paymentRepository.findById(id)
+                .map(paymentReadMapper::mapFrom)
+                .orElseThrow();
     }
 }

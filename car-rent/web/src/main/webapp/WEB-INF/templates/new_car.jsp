@@ -23,9 +23,9 @@
                                    list="Marks" id="inputMark"
                                    placeholder="Select mark" name="carMark" autocomplete="off"
                                    onchange="self.location='${url}?actualMark='+this.value"
-                                   value="${data.actualMark}">
+                                   value="${actualMark}">
                             <datalist id="Marks">
-                                <c:forEach items="${data.marks}" var="mark">
+                                <c:forEach items="${marks}" var="mark">
                                 <option value="${mark}">
                                     </c:forEach>
                             </datalist>
@@ -40,7 +40,7 @@
                                    list="Models" id="inputModel"
                                    placeholder="Select model" name="carModel" autocomplete="off">
                             <datalist id="Models">
-                                <c:forEach items="${data.models}" var="model">
+                                <c:forEach items="${models}" var="model">
                                 <option value="${model}">
                                     </c:forEach>
                             </datalist>
@@ -55,7 +55,7 @@
                                    list="Types" id="inputType"
                                    placeholder="Select type" name="type" autocomplete="off">
                             <datalist id="Types">
-                                <c:forEach items="${data.types}" var="type">
+                                <c:forEach items="${types}" var="type">
                                 <option value="${type}">
                                     </c:forEach>
                             </datalist>
@@ -67,6 +67,15 @@
                     <td>
                         <div class="col-md-4">
                             <input type="text" name="color" placeholder="Enter color" class="form-control" id="color"
+                                   aria-describedby="nameHelp">
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <th scope="row">Registration number</th>
+                    <td>
+                        <div class="col-md-4">
+                            <input type="text" name="regNumber" placeholder="Enter reg number" class="form-control" id="regNum"
                                    aria-describedby="nameHelp">
                         </div>
                     </td>
@@ -93,7 +102,7 @@
                     <td>
                         <div class="col-md-4">
                             <select id="inputFuel" class="form-select" name="fuelType" autocomplete="off" value="">
-                                <c:forEach items="${data.fuelTypes}" var="fuel">
+                                <c:forEach items="${fuelTypes}" var="fuel">
                                     <option value="${fuel}">${fuel}</option>
                                 </c:forEach>
                             </select>

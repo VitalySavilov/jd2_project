@@ -10,7 +10,7 @@ import java.util.Optional;
 
 public interface AppUserRepository extends CrudRepository<AppUser, String> {
 
-    @EntityGraph(attributePaths = {"roles"})
+    @EntityGraph(attributePaths = {"roles", "appUserInfo"})
     Optional<AppUser> findAppUserByUsernameEquals(String username);
 
     @EntityGraph(attributePaths = {"roles", "appUserInfo"})

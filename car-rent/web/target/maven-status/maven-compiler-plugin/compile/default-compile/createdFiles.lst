@@ -1,6 +1,7 @@
 my\web\PayOrderController.class
 my\web\AppOrderListController.class
 my\web\PaymentController.class
+my\web\AppUserProfileController.class
 my\web\EditAppUserController.class
 my\web\HomeController.class
 my\web\RegistrationController.class

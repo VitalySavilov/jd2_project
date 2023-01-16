@@ -24,6 +24,8 @@ public class Car {
     private String color;
     @Column(name = "C_YEAR")
     private String year;
+    @Column(name = "C_REG_NUM")
+    private String regNumber;
     @Column(name = "C_FUEL")
     @Enumerated(EnumType.STRING)
     private Fuel fuelType;

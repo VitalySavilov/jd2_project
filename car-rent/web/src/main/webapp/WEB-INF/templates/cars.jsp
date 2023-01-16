@@ -27,6 +27,7 @@
 
     <table class="table">
         <tr>
+            <th>Reg Number</th>
             <th>Model</th>
             <th>Year</th>
             <th>Type</th>
@@ -36,6 +37,7 @@
         </tr>
         <c:forEach items="${data.content}" var="car">
             <tr>
+                <td><c:out value="${car.regNumber}"/></td>
                 <td><c:out value="${car.carMark} ${car.carModel}"/></td>
                 <td><c:out value="${car.year}"/></td>
                 <td><c:out value="${car.type}"/></td>

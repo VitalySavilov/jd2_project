@@ -11,6 +11,7 @@ public class CarReadDto {
     String carModel;
     String type;
     String color;
+    String regNumber;
     Long power;
     String year;
     String fuelType;

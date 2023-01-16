@@ -12,6 +12,7 @@ public class CarCreateMapper implements Mapper<CarCreateDto, Car> {
     public Car mapFrom(CarCreateDto object) {
         return Car.builder()
                 .color(object.getColor())
+                .regNumber(object.getRegNumber())
                 .fuelType(Fuel.valueOf(object.getFuelType()))
                 .power(object.getPower())
                 .year(object.getYear())

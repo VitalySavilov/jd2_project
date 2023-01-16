@@ -2,8 +2,8 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <jsp:include page="_header.jsp"/>
 
-<h1>This is the homepage of homework-7-application</h1>
-<h2>We have <c:out value="${count}"/> cars in database</h2>
-<h2>You can add cars to the database, but you can not delete =)</h2>
+
+<h2>We have <c:out value="${count}"/> cars</h2>
+
 
 <jsp:include page="_footer.jsp"/>

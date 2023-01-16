@@ -48,7 +48,7 @@
                 <table class="table">
                     <thead>
                     <tr>
-                        <th scope="col"><h2>Edit order:</h2></th>
+                        <th scope="col"><h2>Edit payment:</h2></th>
                         <th scope="col"></th>
                     </tr>
                     </thead>

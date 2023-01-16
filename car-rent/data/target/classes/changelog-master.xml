@@ -49,6 +49,7 @@
                 C_ID          BIGINT AUTO_INCREMENT NOT NULL,
                 C_PRICE       DOUBLE                NULL,
                 C_COLOR       VARCHAR(255)          NULL,
+                C_REG_NUM     VARCHAR(255)          NULL,
                 C_YEAR        VARCHAR(255)          NULL,
                 C_FUEL        VARCHAR(255)          NULL,
                 C_CONSUMPTION DOUBLE                NULL,

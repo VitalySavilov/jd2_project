@@ -7,12 +7,10 @@ import my.dao.CarModelRepository;
 import my.dao.CarRepository;
 import my.dao.CarTypeRepository;
 import my.dto.car.CarCreateDto;
-import my.dto.filter.CarFilter;
-import my.dto.CarFormDataDto;
 import my.dto.car.CarReadDto;
-import my.mapper.CarFormDataMapper;
-import my.mapper.car.CarReadMapper;
+import my.dto.filter.CarFilter;
 import my.mapper.car.CarCreateMapper;
+import my.mapper.car.CarReadMapper;
 import my.mapper.car_image.CarImageCreateMapper;
 import my.mapper.car_mark.CarMarkCreateMapper;
 import my.mapper.car_model.CarModelCreateMapper;
@@ -36,7 +34,6 @@ public class CarService {
     private final CarMarkRepository carMarkRepository;
     private final CarModelRepository carModelRepository;
     private final CarTypeRepository carTypeRepository;
-    private final CarFormDataMapper carFormDataMapper;
     private final CarReadMapper carReadMapper;
     private final CarMarkCreateMapper carMarkCreateMapper;
     private final CarModelCreateMapper carModelCreateMapper;
@@ -78,7 +75,4 @@ public class CarService {
         return carRepository.count();
     }
 
-    public CarFormDataDto getFormData(String actualMark) {
-        return carFormDataMapper.getData(actualMark);
-    }
 }

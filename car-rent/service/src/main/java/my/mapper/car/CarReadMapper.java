@@ -21,6 +21,7 @@ public class CarReadMapper implements Mapper<Car, CarReadDto> {
                 object.getCarModel().getName(),
                 object.getType().getName(),
                 object.getColor(),
+                object.getRegNumber(),
                 object.getPower(),
                 object.getYear(),
                 object.getFuelType().name(),

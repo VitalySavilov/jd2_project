@@ -11,4 +11,6 @@ public interface CarModelRepository extends CrudRepository<CarModel, Long> {
     List<CarModel> findAll();
 
     Optional<CarModel> findCarModelByName(String name);
+
+    Optional<List<CarModel>> findCarModelsByCarMarkName(String name);
 }

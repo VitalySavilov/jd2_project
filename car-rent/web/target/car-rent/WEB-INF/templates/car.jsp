@@ -73,9 +73,17 @@
                 </tr>
                 </tbody>
             </table>
-            <div>
-                <a class="btn btn-light" href="${pageContext.request.contextPath}/new-order/${car.id}" role="button">Order</a>
-            </div>
+
+            <form action="${pageContext.request.contextPath}/new-order/${car.id}" method="post">
+
+                <div class="col-md-4">
+                    <label for="inputMark" class="form-label">Days</label>
+                    <input type="number" class="form-control" name="days" value="1" id="inputMark">
+                </div>
+
+                <button type="submit" class="btn btn-light">Checkout</button>
+            </form>
+
         </div>
     </div>
 </div>
