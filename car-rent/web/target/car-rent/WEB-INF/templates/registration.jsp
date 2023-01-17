@@ -5,7 +5,7 @@
 
 <div class="container">
 
-    <form method="post" action="${pageContext.request.contextPath}/registration" class="row g-3">
+    <form method="post" action="${url}" class="row g-3">
 
         <table class="table">
             <thead>

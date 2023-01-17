@@ -43,7 +43,7 @@
                 <td><c:out value="${payment.appOrder.appUser.appUserInfo.firstname} ${payment.appOrder.appUser.appUserInfo.lastname}"/></td>
                 <td><c:out value="${payment.paymentDate}"/></td>
                 <td><c:out value="${payment.appOrder.sum}"/></td>
-                <td><a class="btn btn-light" href="${pageContext.request.contextPath}/payment/${payment.id}" role="button">Details</a>
+                <td><a class="btn btn-light" href="${pageContext.request.contextPath}/payments/${payment.id}" role="button">Details</a>
                 </td>
             </tr>
         </c:forEach>

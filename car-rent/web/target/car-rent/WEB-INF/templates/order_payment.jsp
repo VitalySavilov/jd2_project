@@ -50,7 +50,7 @@
             </table>
         </div>
         <div class="col align-self-center">
-            <form action="${pageContext.request.contextPath}/order/${userOrder.id}/payment" method="post">
+            <form action="${pageContext.request.contextPath}/payments/payment?orderId=${userOrder.id}" method="post">
 
                 <div class="col-md-4">
                     <label for="inputCars" class="form-label">Payment card</label>

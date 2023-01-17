@@ -45,7 +45,7 @@
                 <td><c:out value="${order.startDate}"/></td>
                 <td><c:out value="${order.endDate}"/></td>
                 <td><c:out value="${order.sum}"/></td>
-                <td><a class="btn btn-light" href="${pageContext.request.contextPath}/order/${order.id}" role="button">Details</a>
+                <td><a class="btn btn-light" href="${pageContext.request.contextPath}/orders/order/${order.id}" role="button">Details</a>
                 </td>
             </tr>
         </c:forEach>

@@ -84,7 +84,7 @@
 <div class="container">
     <div class="col align-self-start">
 
-        <form method="post" action="${url}" class="row g-3">
+        <form method="post" action="${pageContext.request.contextPath}/cars/car/${car.id}/update" class="row g-3">
 
             <table class="table">
                 <thead>
@@ -121,6 +121,8 @@
             </table>
 
             <button type="submit" class="btn btn-secondary">Apply</button>
+
+            <button type="submit" name="" class="btn btn-secondary">Delete this car</button>
 
         </form>
     </div>

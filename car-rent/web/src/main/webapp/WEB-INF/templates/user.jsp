@@ -63,7 +63,7 @@
         </div>
         <div class="col align-self-start">
 
-            <form method="post" action="${url}" class="row g-3">
+            <form method="post" action="${pageContext.request.contextPath}/users/${user.id}/update" class="row g-3">
 
                 <table class="table">
                     <thead>

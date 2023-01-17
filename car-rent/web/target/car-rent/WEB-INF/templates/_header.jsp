@@ -28,13 +28,10 @@
                     <a class="nav-link" href="${pageContext.request.contextPath}/cars">Cars</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="${pageContext.request.contextPath}/registration">Registration</a>
+                    <a class="nav-link" href="${pageContext.request.contextPath}/users/user">Registration</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="${pageContext.request.contextPath}/payments">Payments</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="${pageContext.request.contextPath}/order">Order</a>
                 </li>
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
@@ -42,11 +39,9 @@
                         Admin
                     </a>
                     <ul class="dropdown-menu">
-                        <li><a class="dropdown-item" href="${pageContext.request.contextPath}/new-car">New Car</a></li>
-                        <li><a class="dropdown-item" href="${pageContext.request.contextPath}/car">Car</a></li>
+                        <li><a class="dropdown-item" href="${pageContext.request.contextPath}/cars/car">New Car</a></li>
                         <li><a class="dropdown-item" href="${pageContext.request.contextPath}/users">Users</a></li>
                         <li><a class="dropdown-item" href="${pageContext.request.contextPath}/orders">Orders</a></li>
-                        <li><a class="dropdown-item" href="${pageContext.request.contextPath}/users">Admin</a></li>
                     </ul>
                 </li>
                 <li class="nav-item">
@@ -59,7 +54,7 @@
                 </li>
             </ul>
             <security:authorize access="isAuthenticated()">
-                    <a class="nav-link" href="${pageContext.request.contextPath}/user-page"><security:authentication
+                    <a class="nav-link" href="${pageContext.request.contextPath}/users/profile"><security:authentication
                             property="name"/></a>
             </security:authorize>
 

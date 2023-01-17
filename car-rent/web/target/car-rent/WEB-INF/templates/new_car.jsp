@@ -4,7 +4,7 @@
 <jsp:include page="_header.jsp"/>
 
 <div class="container">
-        <form method="post" action="${pageContext.request.contextPath}/new-car" enctype="multipart/form-data"
+        <form method="post" action="${pageContext.request.contextPath}/cars/car" enctype="multipart/form-data"
               class="row g-3">
 
             <table class="table">

@@ -53,7 +53,7 @@ public class AppOrderService {
     }
 
     @Transactional
-    public void editOrder(long orderId, AppOrderEditDto appOrderEditDto) {
+    public void updateOrder(long orderId, AppOrderEditDto appOrderEditDto) {
         AppOrder appOrder = appOrderRepository.findById(orderId).orElseThrow();
         Car car = carRepository.findCarById(appOrder.getCar().getId()).orElseThrow();
         if (!appOrderEditDto.getOrderStatus().isEmpty()){

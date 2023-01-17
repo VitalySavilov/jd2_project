@@ -16,12 +16,12 @@
                 <div class="carousel-inner">
                     <c:if test="${fn:length(car.imageIdList) > 0}">
                         <div class="carousel-item active">
-                            <img src="image/${car.imageIdList[0]}" class="d-block w-100" alt="...">
+                            <img src="car/image/${car.imageIdList[0]}" class="d-block w-100" alt="...">
                         </div>
                         <c:forEach begin="${fn:length(car.imageIdList) - (fn:length(car.imageIdList) - 1)}"
                                    end="${fn:length(car.imageIdList) - 1}" var="i">
                             <div class="carousel-item">
-                                <img src="image/${car.imageIdList[i]}" class="d-block w-100" alt="...">
+                                <img src="car/image/${car.imageIdList[i]}" class="d-block w-100" alt="...">
                             </div>
                         </c:forEach>
                     </c:if>
@@ -74,7 +74,7 @@
                 </tbody>
             </table>
 
-            <form action="${pageContext.request.contextPath}/new-order/${car.id}" method="post">
+            <form action="${pageContext.request.contextPath}/orders/order?carId=${car.id}" method="post">
 
                 <div class="col-md-4">
                     <label for="inputMark" class="form-label">Days</label>

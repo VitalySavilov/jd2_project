@@ -12,7 +12,7 @@ public class HomeController {
     private final CarService carService;
 
     @GetMapping(value = "/")
-    public String homePage(Model model) {
+    public String showHomePage(Model model) {
         model.addAttribute("count", carService.getCarCount());
         return "home";
     }

@@ -56,12 +56,12 @@
                 <td><c:out value="${car.price}"/></td>
                 <security:authorize access="!isAuthenticated() or !hasRole('ADMIN')">
                     <td>
-                        <a class="btn btn-light" href="${pageContext.request.contextPath}/car/${car.id}" role="button">Details</a>
+                        <a class="btn btn-light" href="${pageContext.request.contextPath}/cars/${car.id}" role="button">Details</a>
                     </td>
                 </security:authorize>
                 <security:authorize access="hasRole('ADMIN')">
                     <td>
-                        <a class="btn btn-light" href="${pageContext.request.contextPath}/admin-car/${car.id}" role="button">Details</a>
+                        <a class="btn btn-light" href="${pageContext.request.contextPath}/cars/car/${car.id}" role="button">Details</a>
                     </td>
                 </security:authorize>
             </tr>

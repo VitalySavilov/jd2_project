@@ -46,7 +46,7 @@
                         <c:out value="${role.name} "/>
                     </c:forEach>
                 </td>
-                <td><a class="btn btn-light" href="${pageContext.request.contextPath}/user/${user.id}" role="button">Details</a>
+                <td><a class="btn btn-light" href="${pageContext.request.contextPath}/users/${user.id}" role="button">Details</a>
             </tr>
         </c:forEach>
     </table>
