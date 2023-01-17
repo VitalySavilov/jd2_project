@@ -4,7 +4,10 @@ import lombok.RequiredArgsConstructor;
 import my.dao.AppOrderRepository;
 import my.dao.AppUserRepository;
 import my.dao.CarRepository;
+import my.dto.app_order.AppOrderEditDto;
 import my.dto.app_order.AppOrderReadDto;
+import my.dto.app_order.OrderStatus;
+import my.dto.car.CarStatus;
 import my.mapper.app_order.AppOrderReadMapper;
 import my.model.AppOrder;
 import my.model.AppUser;
@@ -28,8 +31,9 @@ public class AppOrderService {
 
     @Transactional
     public AppOrderReadDto createOrder(long carId, String user, long days) {
-        Car car = carRepository.findCarById(carId).orElseThrow();
         AppUser appUser = appUserRepository.findAppUserByUsernameEquals(user).orElseThrow();
+        Car car = carRepository.findCarById(carId).orElseThrow();
+        car.setAvailable(CarStatus.UNAVAILABLE.isAvailable());
         AppOrder appOrder = appOrderRepository.save(AppOrder.builder()
                 .appUser(appUser)
                 .startDate(Date.valueOf(LocalDate.now()))
@@ -45,6 +49,16 @@ public class AppOrderService {
     }
 
     public AppOrderReadDto findOrder(long id){
-        return mapper.mapFrom(appOrderRepository.findAppOrdersById(id));
+        return mapper.mapFrom(appOrderRepository.findAppOrderById(id));
+    }
+
+    @Transactional
+    public void editOrder(long orderId, AppOrderEditDto appOrderEditDto) {
+        AppOrder appOrder = appOrderRepository.findById(orderId).orElseThrow();
+        Car car = carRepository.findCarById(appOrder.getCar().getId()).orElseThrow();
+        if (!appOrderEditDto.getOrderStatus().isEmpty()){
+            appOrder.setCompleted(OrderStatus.valueOf(appOrderEditDto.getOrderStatus()).isCompleted());
+            car.setAvailable(OrderStatus.valueOf(appOrderEditDto.getOrderStatus()).isCompleted());
+        }
     }
 }

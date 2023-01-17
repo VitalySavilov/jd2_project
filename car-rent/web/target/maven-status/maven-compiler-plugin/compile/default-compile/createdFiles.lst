@@ -12,6 +12,7 @@ my\security\SecurityInitializer.class
 my\web\CarListController.class
 my\web\NewOrderController.class
 my\servlet\ServletContainerInitializerImpl.class
+my\web\EditCarController.class
 my\web\CarController.class
 my\web\WebConfig.class
 my\web\AppUserListController.class

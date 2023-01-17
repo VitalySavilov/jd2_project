@@ -2,6 +2,7 @@ D:\work\project-repository\car-rent\web\src\main\java\my\servlet\ServletContaine
 D:\work\project-repository\car-rent\web\src\main\java\my\web\EditAppOrderController.java
 D:\work\project-repository\car-rent\web\src\main\java\my\web\AppUserProfileController.java
 D:\work\project-repository\car-rent\web\src\main\java\my\web\CarListController.java
+D:\work\project-repository\car-rent\web\src\main\java\my\web\EditCarController.java
 D:\work\project-repository\car-rent\web\src\main\java\my\web\PaymentListController.java
 D:\work\project-repository\car-rent\web\src\main\java\my\web\HomeController.java
 D:\work\project-repository\car-rent\web\src\main\java\my\security\WebSecurityConfig.java

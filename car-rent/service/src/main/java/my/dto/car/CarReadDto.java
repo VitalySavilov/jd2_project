@@ -10,6 +10,7 @@ public class CarReadDto {
     String carMark;
     String carModel;
     String type;
+    String status;
     String color;
     String regNumber;
     Long power;

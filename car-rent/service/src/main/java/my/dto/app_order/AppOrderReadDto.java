@@ -11,6 +11,7 @@ public class AppOrderReadDto {
     Long id;
     Date startDate;
     Date endDate;
+    String status;
     CarReadDto car;
     AppUserReadDto appUser;
     Double sum;

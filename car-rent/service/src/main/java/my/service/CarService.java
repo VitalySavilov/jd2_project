@@ -2,12 +2,11 @@ package my.service;
 
 import com.querydsl.core.types.Predicate;
 import lombok.RequiredArgsConstructor;
-import my.dao.CarMarkRepository;
-import my.dao.CarModelRepository;
-import my.dao.CarRepository;
-import my.dao.CarTypeRepository;
+import my.dao.*;
 import my.dto.car.CarCreateDto;
 import my.dto.car.CarReadDto;
+import my.dto.car.CarStatus;
+import my.dto.car.EditCarDto;
 import my.dto.filter.CarFilter;
 import my.mapper.car.CarCreateMapper;
 import my.mapper.car.CarReadMapper;
@@ -57,6 +56,17 @@ public class CarService {
         car.setType(carType);
         car.setImages(images);
         carRepository.save(car);
+    }
+
+    @Transactional
+    public void updateCar(long carId, EditCarDto editCarDto) {
+        Car car = carRepository.findCarById(carId).orElseThrow();
+        car.setPrice(editCarDto.getPrice());
+        if ((CarStatus.AVAILABLE.name().equals(editCarDto.getStatus())
+                && car.getOrders().stream().allMatch(AppOrder::isCompleted))
+                || CarStatus.UNAVAILABLE.name().equals(editCarDto.getStatus())) {
+            car.setAvailable(CarStatus.valueOf(editCarDto.getStatus()).isAvailable());
+        }
     }
 
     public Page<CarReadDto> getAll(Pageable pageable, CarFilter filter) {

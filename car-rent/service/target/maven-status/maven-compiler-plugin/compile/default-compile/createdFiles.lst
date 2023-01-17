@@ -1,5 +1,7 @@
+my\dto\app_order\AppOrderEditDto.class
 my\service\CarImageService.class
 my\mapper\app_user\AppUserCreateMapper.class
+my\dto\app_order\OrderStatus.class
 my\dto\car\CarReadDto.class
 my\mapper\car\CarReadMapper.class
 my\mapper\car\CarCreateMapper.class
@@ -24,6 +26,7 @@ my\service\AppUserService.class
 my\mapper\car_image\CarImageCreateMapper.class
 my\mapper\car_type\CarTypeCreateMapper.class
 my\mapper\app_user\AppUserReadMapper.class
+my\dto\car\CarStatus.class
 my\service\ServiceConfig.class
 my\mapper\payment_card\PaymentCardCreateMapper.class
 my\dto\app_order\AppOrderReadDto.class
@@ -33,4 +36,5 @@ my\dto\payment_card\PaymentCardReadDto.class
 my\service\RoleService.class
 my\dto\app_user\EditUserProfileDto.class
 my\service\PaymentService.class
+my\dto\car\EditCarDto.class
 my\service\PaymentCardService.class

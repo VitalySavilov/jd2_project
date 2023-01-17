@@ -50,7 +50,7 @@ public class Car {
     @Builder.Default
     private List<AppOrder> orders = new ArrayList<>();
     @Builder.Default
-    @Column(name = "C_IS_BUSY")
-    private boolean isBusy = false;
+    @Column(name = "C_IS_AVAILABLE")
+    private boolean isAvailable = true;
 }
 

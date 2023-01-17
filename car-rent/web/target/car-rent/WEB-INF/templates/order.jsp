@@ -19,6 +19,10 @@
                     <td>${order.id}</td>
                 </tr>
                 <tr>
+                    <th scope="row">Status</th>
+                    <td>${order.status}</td>
+                </tr>
+                <tr>
                     <th scope="row">User</th>
                     <td>${order.appUser.username}</td>
                 </tr>
@@ -66,22 +70,15 @@
                     </thead>
                     <tbody>
                     <tr>
-                        <th scope="row">Add role</th>
+                        <th scope="row">Select order status</th>
                         <td>
-                            <div class="col-md-6">
-
-
-
-                            </div>
-                        </td>
-                    </tr>
-                    <tr>
-                        <th scope="row">Delete role</th>
-                        <td>
-                            <div class="col-md-6">
-
-
-
+                            <div class="col-md-8">
+                                <select id="inputStatus" class="form-select" name="orderStatus" autocomplete="off">
+                                    <option value="" selected></option>
+                                    <c:forEach items="${statusList}" var="status">
+                                        <option value="${status}">${status}</option>
+                                    </c:forEach>
+                                </select>
                             </div>
                         </td>
                     </tr>

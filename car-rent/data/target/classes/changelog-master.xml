@@ -46,18 +46,18 @@
         <sql>
             CREATE TABLE t_car
             (
-                C_ID          BIGINT AUTO_INCREMENT NOT NULL,
-                C_PRICE       DOUBLE                NULL,
-                C_COLOR       VARCHAR(255)          NULL,
-                C_REG_NUM     VARCHAR(255)          NULL,
-                C_YEAR        VARCHAR(255)          NULL,
-                C_FUEL        VARCHAR(255)          NULL,
-                C_CONSUMPTION DOUBLE                NULL,
-                C_POWER       BIGINT                NULL,
-                T_ID          BIGINT                NULL,
-                M_ID          BIGINT                NOT NULL,
-                MARK_ID       BIGINT                NOT NULL,
-                C_IS_BUSY     BIT(1)                NOT NULL,
+                C_ID           BIGINT AUTO_INCREMENT NOT NULL,
+                C_PRICE        DOUBLE                NULL,
+                C_COLOR        VARCHAR(255)          NULL,
+                C_YEAR         VARCHAR(255)          NULL,
+                C_REG_NUM      VARCHAR(255)          NULL,
+                C_FUEL         VARCHAR(255)          NULL,
+                C_CONSUMPTION  DOUBLE                NULL,
+                C_POWER        BIGINT                NULL,
+                T_ID           BIGINT                NULL,
+                M_ID           BIGINT                NOT NULL,
+                MARK_ID        BIGINT                NOT NULL,
+                C_IS_AVAILABLE BIT(1)                NOT NULL,
                 CONSTRAINT pk_t_car PRIMARY KEY (C_ID)
             );
 

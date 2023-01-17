@@ -30,6 +30,7 @@
             <th>№</th>
             <th>Car</th>
             <th>User</th>
+            <th>Status</th>
             <th>Date start</th>
             <th>Date end</th>
             <th>Sum</th>
@@ -40,6 +41,7 @@
                 <td><c:out value="${order.id}"/></td>
                 <td><c:out value="${order.car.carMark} ${order.car.carModel} ${order.car.year}"/></td>
                 <td><c:out value="${order.appUser.appUserInfo.firstname} ${order.appUser.appUserInfo.lastname}"/></td>
+                <td><c:out value="${order.status}"/></td>
                 <td><c:out value="${order.startDate}"/></td>
                 <td><c:out value="${order.endDate}"/></td>
                 <td><c:out value="${order.sum}"/></td>

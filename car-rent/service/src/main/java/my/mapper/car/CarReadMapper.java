@@ -2,6 +2,7 @@ package my.mapper.car;
 
 import lombok.RequiredArgsConstructor;
 import my.dto.car.CarReadDto;
+import my.dto.car.CarStatus;
 import my.mapper.Mapper;
 import my.model.Car;
 import my.model.CarImage;
@@ -20,6 +21,7 @@ public class CarReadMapper implements Mapper<Car, CarReadDto> {
                 object.getCarMark().getName(),
                 object.getCarModel().getName(),
                 object.getType().getName(),
+                object.isAvailable() ? CarStatus.AVAILABLE.name() : CarStatus.UNAVAILABLE.name(),
                 object.getColor(),
                 object.getRegNumber(),
                 object.getPower(),

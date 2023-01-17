@@ -1,5 +1,6 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="security" uri="http://www.springframework.org/security/tags" %>
 
 <jsp:include page="_header.jsp"/>
 
@@ -27,8 +28,13 @@
 
     <table class="table">
         <tr>
-            <th>Reg Number</th>
+            <security:authorize access="hasRole('ADMIN')">
+                <th>Reg Number</th>
+            </security:authorize>
             <th>Model</th>
+            <security:authorize access="hasRole('ADMIN')">
+                <th>Status</th>
+            </security:authorize>
             <th>Year</th>
             <th>Type</th>
             <th>Color</th>
@@ -37,14 +43,27 @@
         </tr>
         <c:forEach items="${data.content}" var="car">
             <tr>
-                <td><c:out value="${car.regNumber}"/></td>
+                <security:authorize access="hasRole('ADMIN')">
+                    <td><c:out value="${car.regNumber}"/></td>
+                </security:authorize>
                 <td><c:out value="${car.carMark} ${car.carModel}"/></td>
+                <security:authorize access="hasRole('ADMIN')">
+                    <td><c:out value="${car.status}"/></td>
+                </security:authorize>
                 <td><c:out value="${car.year}"/></td>
                 <td><c:out value="${car.type}"/></td>
                 <td><c:out value="${car.color}"/></td>
                 <td><c:out value="${car.price}"/></td>
-                <td><a class="btn btn-light" href="${pageContext.request.contextPath}/car/${car.id}" role="button">Details</a>
-                </td>
+                <security:authorize access="!isAuthenticated() or !hasRole('ADMIN')">
+                    <td>
+                        <a class="btn btn-light" href="${pageContext.request.contextPath}/car/${car.id}" role="button">Details</a>
+                    </td>
+                </security:authorize>
+                <security:authorize access="hasRole('ADMIN')">
+                    <td>
+                        <a class="btn btn-light" href="${pageContext.request.contextPath}/admin-car/${car.id}" role="button">Details</a>
+                    </td>
+                </security:authorize>
             </tr>
         </c:forEach>
     </table>
