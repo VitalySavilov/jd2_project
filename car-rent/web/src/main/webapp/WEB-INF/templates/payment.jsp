@@ -23,6 +23,10 @@
                     <td>${payment.appOrder.id}</td>
                 </tr>
                 <tr>
+                    <th scope="row">Car number</th>
+                    <td>${payment.appOrder.car.regNumber}</td>
+                </tr>
+                <tr>
                     <th scope="row">Firstname</th>
                     <td>${payment.appOrder.appUser.appUserInfo.firstname}</td>
                 </tr>

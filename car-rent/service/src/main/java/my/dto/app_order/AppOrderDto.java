@@ -1,18 +1,18 @@
 package my.dto.app_order;
 
 import lombok.Value;
-import my.dto.app_user.AppUserReadDto;
+import my.dto.app_user.AppUserDto;
 import my.dto.car.CarReadDto;
 
 import java.sql.Date;
 
 @Value
-public class AppOrderReadDto {
+public class AppOrderDto {
     Long id;
     Date startDate;
     Date endDate;
     String status;
     CarReadDto car;
-    AppUserReadDto appUser;
+    AppUserDto appUser;
     Double sum;
 }

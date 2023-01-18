@@ -1,10 +1,7 @@
 package my.web;
 
 import lombok.RequiredArgsConstructor;
-import my.dto.car.CarCreateDto;
-import my.dto.car.CarReadDto;
-import my.dto.car.CarStatus;
-import my.dto.car.EditCarDto;
+import my.dto.car.*;
 import my.dto.filter.CarFilter;
 import my.dto.page_response.PageResponse;
 import my.model.Fuel;
@@ -39,6 +36,7 @@ public class CarController {
     @GetMapping("/{carId}")
     public String getCar(@PathVariable("carId") long carId, Model model) {
         model.addAttribute("car", carService.getCarById(carId));
+        model.addAttribute("imageIdList", carImageService.getImageIdList(carId));
         return "car";
     }
 
@@ -51,6 +49,7 @@ public class CarController {
     @GetMapping("/car/{carId}")
     public String getCarForUpdate(@PathVariable("carId") long carId, Model model) {
         model.addAttribute("car", carService.getCarById(carId));
+        model.addAttribute("imageIdList", carImageService.getImageIdList(carId));
         model.addAttribute("statusList",
                 Arrays.stream(CarStatus.values())
                         .map(Enum::name)
@@ -59,8 +58,8 @@ public class CarController {
     }
 
     @PostMapping("/car/{carId}/update")
-    public String updateCar(@PathVariable("carId") long carId, EditCarDto editCarDto) {
-        carService.updateCar(carId, editCarDto);
+    public String updateCar(@PathVariable("carId") long carId, CarReadDto carReadDto) {
+        carService.updateCar(carId, carReadDto);
         return "redirect:/cars/car/{carId}";
     }
 

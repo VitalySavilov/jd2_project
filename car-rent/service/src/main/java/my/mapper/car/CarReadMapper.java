@@ -5,10 +5,7 @@ import my.dto.car.CarReadDto;
 import my.dto.car.CarStatus;
 import my.mapper.Mapper;
 import my.model.Car;
-import my.model.CarImage;
 import org.springframework.stereotype.Component;
-
-import java.util.stream.Collectors;
 
 @Component
 @RequiredArgsConstructor
@@ -28,10 +25,7 @@ public class CarReadMapper implements Mapper<Car, CarReadDto> {
                 object.getYear(),
                 object.getFuelType().name(),
                 object.getFuelConsumption(),
-                object.getPrice(),
-                object.getImages().stream()
-                        .map(CarImage::getId)
-                        .collect(Collectors.toList())
+                object.getPrice()
         );
     }
 }

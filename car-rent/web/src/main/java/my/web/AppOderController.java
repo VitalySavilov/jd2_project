@@ -1,8 +1,8 @@
 package my.web;
 
 import lombok.RequiredArgsConstructor;
+import my.dto.app_order.AppOrderDto;
 import my.dto.app_order.AppOrderEditDto;
-import my.dto.app_order.AppOrderReadDto;
 import my.dto.app_order.OrderStatus;
 import my.dto.page_response.PageResponse;
 import my.service.AppOrderService;
@@ -30,7 +30,7 @@ public class AppOderController {
 
     @GetMapping
     public String getAllOrders(Model model, Pageable pageable) {
-        Page<AppOrderReadDto> page = appOrderService.findAllOrders(pageable);
+        Page<AppOrderDto> page = appOrderService.findAllOrders(pageable);
         model.addAttribute("data", PageResponse.of(page));
         return "orders";
     }

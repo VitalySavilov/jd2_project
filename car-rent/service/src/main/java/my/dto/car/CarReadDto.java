@@ -2,8 +2,6 @@ package my.dto.car;
 
 import lombok.Value;
 
-import java.util.List;
-
 @Value
 public class CarReadDto {
     Long id;
@@ -18,5 +16,4 @@ public class CarReadDto {
     String fuelType;
     Double fuelConsumption;
     Double price;
-    List<Long> imageIdList;
 }

@@ -31,6 +31,10 @@
                     <td>${payment.appOrder.id}</td>
                 </tr>
                 <tr>
+                    <th scope="row">Car number</th>
+                    <td>${payment.appOrder.car.regNumber}</td>
+                </tr>
+                <tr>
                     <th scope="row">Sum</th>
                     <td>${payment.appOrder.sum}</td>
                 </tr>

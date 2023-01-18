@@ -14,14 +14,14 @@
         <div class="col align-self-start">
             <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
                 <div class="carousel-inner">
-                    <c:if test="${fn:length(car.imageIdList) > 0}">
+                    <c:if test="${fn:length(imageIdList) > 0}">
                         <div class="carousel-item active">
-                            <img src="car/image/${car.imageIdList[0]}" class="d-block w-100" alt="...">
+                            <img src="car/image/${imageIdList[0]}" class="d-block w-100" alt="...">
                         </div>
-                        <c:forEach begin="${fn:length(car.imageIdList) - (fn:length(car.imageIdList) - 1)}"
-                                   end="${fn:length(car.imageIdList) - 1}" var="i">
+                        <c:forEach begin="${fn:length(imageIdList) - (fn:length(imageIdList) - 1)}"
+                                   end="${fn:length(imageIdList) - 1}" var="i">
                             <div class="carousel-item">
-                                <img src="car/image/${car.imageIdList[i]}" class="d-block w-100" alt="...">
+                                <img src="car/image/${imageIdList[i]}" class="d-block w-100" alt="...">
                             </div>
                         </c:forEach>
                     </c:if>

@@ -10,7 +10,12 @@ import org.springframework.data.repository.PagingAndSortingRepository;
 public interface PaymentRepository extends PagingAndSortingRepository<Payment, Long>,
         QuerydslPredicateExecutor<Payment> {
 
-    @EntityGraph(attributePaths = {"appOrder", "appOrder.appUser", "appOrder.appUser.appUserInfo", "appOrder.car"})
+    @EntityGraph(attributePaths = {
+            "appOrder",
+            "appOrder.appUser",
+            "appOrder.appUser.appUserInfo",
+            "appOrder.car"
+    })
     Page<Payment> findAll(Pageable pageable);
 
 }

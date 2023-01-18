@@ -29,7 +29,7 @@
         <tr>
             <th>Payment number</th>
             <th>Order number</th>
-            <th>Car</th>
+            <th>Car number</th>
             <th>User</th>
             <th>Date</th>
             <th>Sum</th>
@@ -39,7 +39,7 @@
             <tr>
                 <td><c:out value="${payment.id}"/></td>
                 <td><c:out value="${payment.appOrder.id}"/></td>
-                <td><c:out value="${payment.appOrder.car.carMark} ${payment.appOrder.car.carModel} ${payment.appOrder.car.year}"/></td>
+                <td><c:out value="${payment.appOrder.car.regNumber}"/></td>
                 <td><c:out value="${payment.appOrder.appUser.appUserInfo.firstname} ${payment.appOrder.appUser.appUserInfo.lastname}"/></td>
                 <td><c:out value="${payment.paymentDate}"/></td>
                 <td><c:out value="${payment.appOrder.sum}"/></td>
