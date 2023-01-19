@@ -4,7 +4,6 @@ import lombok.*;
 
 import javax.persistence.*;
 import java.sql.Date;
-import java.util.List;
 
 @Entity
 @Getter
@@ -27,12 +26,11 @@ public class AppOrder {
     private Date endDate;
     @Column(name = "O_SUM")
     private Double orderSum;
-    @ManyToOne
-    @JoinColumn(name = "USER_ID")
-    private AppUser appUser;
-    @ManyToOne
-    @JoinColumn(name = "C_ID")
-    private Car car;
-    @OneToMany(mappedBy = "appOrder")
-    private List<Payment> payments;
+    @Column(name = "O_CAR_NUM")
+    private String carNumber;
+    @OneToOne(mappedBy = "appOrder")
+    private Payment payment;
+    @OneToOne
+    @JoinColumn(name = "INFO_ID")
+    private AppUserInfo appUserInfo;
 }

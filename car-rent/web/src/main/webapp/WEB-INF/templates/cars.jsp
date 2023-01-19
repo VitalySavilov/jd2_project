@@ -14,16 +14,6 @@
 
         <jsp:include page="_pagination.jsp"/>
 
-        <div class="col-md-4">
-            <label for="inputMark" class="form-label">Mark</label>
-            <input type="text" class="form-control" name="mark" value="${filter.mark}" id="inputMark">
-        </div>
-        <div class="col-md-4">
-            <label for="inputType" class="form-label">Type</label>
-            <input type="text" class="form-control" name="type" value="${filter.type}" id="inputType">
-        </div>
-
-        <button type="submit" class="btn btn-light">filter</button>
     </form>
 
     <table class="table">

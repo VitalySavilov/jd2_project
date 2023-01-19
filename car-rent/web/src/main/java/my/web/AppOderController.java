@@ -6,6 +6,7 @@ import my.dto.app_order.AppOrderEditDto;
 import my.dto.app_order.OrderStatus;
 import my.dto.page_response.PageResponse;
 import my.service.AppOrderService;
+import my.service.CarService;
 import my.service.PaymentCardService;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
@@ -26,6 +27,7 @@ import java.util.stream.Collectors;
 @RequestMapping("/orders")
 public class AppOderController {
     private final AppOrderService appOrderService;
+    private final CarService carService;
     private final PaymentCardService paymentCardService;
 
     @GetMapping
@@ -36,10 +38,11 @@ public class AppOderController {
     }
 
     @PostMapping("/order")
-    public String createOrder(long carId, @AuthenticationPrincipal User user, long days, Model model) {
+    public String createOrder(@AuthenticationPrincipal User user, long carId, long days, Model model) {
         model.addAttribute("userCards", paymentCardService.findPaymentCardsByUsername(user.getUsername()));
         model.addAttribute("userOrder", appOrderService.createOrder(carId, user.getUsername(), days));
-        return "order_payment";
+        model.addAttribute("car", carService.getCarById(carId));
+        return "new_order";
     }
 
     @GetMapping("/order/{orderId}")

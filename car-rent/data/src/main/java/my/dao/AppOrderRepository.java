@@ -4,26 +4,14 @@ import my.model.AppOrder;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.jpa.repository.EntityGraph;
-import org.springframework.data.querydsl.QuerydslPredicateExecutor;
 import org.springframework.data.repository.PagingAndSortingRepository;
 
-public interface AppOrderRepository extends PagingAndSortingRepository<AppOrder, Long>,
-        QuerydslPredicateExecutor<AppOrder> {
+public interface AppOrderRepository extends PagingAndSortingRepository<AppOrder, Long> {
 
-    @EntityGraph(attributePaths = {
-            "appUser",
-            "appUser.appUserInfo",
-            "car",
-            "car.carMark",
-            "car.carModel",
-            "car.type"
-    })
+    @EntityGraph(attributePaths = {"appUserInfo"})
     Page<AppOrder> findAll(Pageable pageable);
 
-    @EntityGraph(attributePaths = {
-            "appUser",
-            "appUser.appUserInfo",
-            "car"})
+    @EntityGraph(attributePaths = {"appUserInfo"})
     AppOrder findAppOrderById(long id);
 
 }

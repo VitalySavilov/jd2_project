@@ -101,8 +101,12 @@
                     </tr>
                     </tbody>
                 </table>
-
                 <button type="submit" class="btn btn-secondary">Apply</button>
+            </form>
+
+            <form method="post" action="${pageContext.request.contextPath}/users/${user.id}/delete" class="row g-3">
+
+                <button type="submit" class="btn btn-secondary">Delete user</button>
 
             </form>
         </div>

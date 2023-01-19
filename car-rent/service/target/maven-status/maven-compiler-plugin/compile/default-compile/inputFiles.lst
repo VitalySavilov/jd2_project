@@ -22,8 +22,6 @@ D:\work\project-repository\car-rent\service\src\main\java\my\dto\app_order\AppOr
 D:\work\project-repository\car-rent\service\src\main\java\my\dto\app_order\OrderStatus.java
 D:\work\project-repository\car-rent\service\src\main\java\my\service\CarService.java
 D:\work\project-repository\car-rent\service\src\main\java\my\dto\app_user\EditUserDto.java
-D:\work\project-repository\car-rent\service\src\main\java\my\dto\filter\CarFilter.java
-D:\work\project-repository\car-rent\service\src\main\java\my\mapper\app_order\AppOrderForPaymentDtoMapper.java
 D:\work\project-repository\car-rent\service\src\main\java\my\dto\payment_card\PaymentCardReadDto.java
 D:\work\project-repository\car-rent\service\src\main\java\my\mapper\car_image\CarImageCreateMapper.java
 D:\work\project-repository\car-rent\service\src\main\java\my\dto\app_user\AppUserReadDto.java
@@ -39,6 +37,5 @@ D:\work\project-repository\car-rent\service\src\main\java\my\service\PaymentCard
 D:\work\project-repository\car-rent\service\src\main\java\my\mapper\payment_card\PaymentCardCreateMapper.java
 D:\work\project-repository\car-rent\service\src\main\java\my\service\CarTypeService.java
 D:\work\project-repository\car-rent\service\src\main\java\my\mapper\car\CarCreateMapper.java
-D:\work\project-repository\car-rent\service\src\main\java\my\dto\app_order\AppOrderForPaymentDto.java
 D:\work\project-repository\car-rent\service\src\main\java\my\service\CarImageService.java
 D:\work\project-repository\car-rent\service\src\main\java\my\mapper\car\CarReadMapper.java

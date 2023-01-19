@@ -30,16 +30,13 @@ my\mapper\app_user\AppUserReadMapper.class
 my\dto\app_user\AppUserDto.class
 my\dto\car\CarStatus.class
 my\mapper\app_order\AppOrderDtoMapper.class
-my\mapper\app_order\AppOrderForPaymentDtoMapper.class
 my\service\ServiceConfig.class
 my\mapper\payment_card\PaymentCardCreateMapper.class
 my\dto\app_order\AppOrderDto.class
 my\dto\page_response\PageResponse.class
-my\dto\filter\CarFilter.class
 my\dto\payment_card\PaymentCardReadDto.class
 my\mapper\app_user\AppUserMapper.class
 my\service\RoleService.class
-my\dto\app_order\AppOrderForPaymentDto.class
 my\dto\app_user\EditUserProfileDto.class
 my\service\PaymentService.class
 my\service\PaymentCardService.class

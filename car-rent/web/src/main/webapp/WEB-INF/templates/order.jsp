@@ -23,24 +23,16 @@
                     <td>${order.status}</td>
                 </tr>
                 <tr>
-                    <th scope="row">User</th>
-                    <td>${order.appUser.username}</td>
-                </tr>
-                <tr>
                     <th scope="row">Firstname</th>
-                    <td>${order.appUser.appUserInfo.firstname}</td>
+                    <td>${order.firstname}</td>
                 </tr>
                 <tr>
                     <th scope="row">Lastname</th>
-                    <td>${order.appUser.appUserInfo.lastname}</td>
+                    <td>${order.lastname}</td>
                 </tr>
                 <tr>
-                    <th scope="row">Car mark</th>
-                    <td>${order.car.carMark}</td>
-                </tr>
-                <tr>
-                    <th scope="row">Car model</th>
-                    <td>${order.car.carModel}</td>
+                    <th scope="row">Car number</th>
+                    <td>${order.carNumber}</td>
                 </tr>
                 <tr>
                     <th scope="row">Date start</th>

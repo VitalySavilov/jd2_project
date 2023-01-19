@@ -19,7 +19,7 @@ public class Payment {
     private Long id;
     @Column(name = "P_DATE")
     private Date paymentDate;
-    @ManyToOne
+    @OneToOne
     @JoinColumn(name = "O_ID")
     private AppOrder appOrder;
 

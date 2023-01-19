@@ -24,7 +24,7 @@ public class AppUser {
     private String username;
     @Column(name = "USER_PASSWORD")
     private String password;
-    @OneToOne(cascade = CascadeType.ALL)
+    @OneToOne(cascade = CascadeType.PERSIST)
     @JoinColumn(name = "INFO_ID")
     private AppUserInfo appUserInfo;
     @ManyToMany
@@ -32,10 +32,7 @@ public class AppUser {
             inverseJoinColumns = @JoinColumn(name = "R_ID"))
     @Builder.Default
     private List<AppUserRole> roles = new ArrayList<>();
-    @OneToMany(mappedBy = "appUser")
-    @Builder.Default
-    private List<AppOrder> orders = new ArrayList<>();
-    @OneToMany(mappedBy = "appUser")
+    @OneToMany(mappedBy = "appUser", cascade = CascadeType.ALL)
     @Builder.Default
     private List<PaymentCard> paymentCards = new ArrayList<>();
 }

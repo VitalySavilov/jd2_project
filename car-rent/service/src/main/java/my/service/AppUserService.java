@@ -79,18 +79,36 @@ public class AppUserService {
 
     @Transactional
     public void updateUserProfile(EditUserProfileDto editUserProfileDto, String username) {
-        AppUser appUser = appUserRepository.findAppUserByUsernameEquals(username).orElseThrow();
-        List<PaymentCard> cards = appUser.getPaymentCards();
-        List<String> cardNumbers = cards.stream().map(PaymentCard::getCardNumber).collect(Collectors.toList());
-        for (PaymentCard card : cards) {
-            if (card.getCardNumber().equals(editUserProfileDto.getDelCard())) {
-                paymentCardRepository.delete(card);
-            }
+        if (editUserProfileDto.getDelCardId() != null) {
+            appUserRepository.findAppUserByUsernameEquals(username)
+                    .map(x -> x.getPaymentCards()
+                            .remove(paymentCardRepository.findById(editUserProfileDto.getDelCardId())
+                                    .orElseThrow())).orElseThrow();
+            paymentCardRepository.deleteById(editUserProfileDto.getDelCardId());
         }
-        if (!editUserProfileDto.getAddCard().isEmpty() && !cardNumbers.contains(editUserProfileDto.getAddCard())) {
+        AppUser appUser = appUserRepository.findAppUserByUsernameEquals(username).orElseThrow();
+        if (!editUserProfileDto.getAddCard().isEmpty()
+                && !appUser.getPaymentCards().stream()
+                .map(PaymentCard::getCardNumber)
+                .collect(Collectors.toList())
+                .contains(editUserProfileDto.getAddCard())) {
             PaymentCard paymentCard = paymentCardCreateMapper.mapFrom(editUserProfileDto);
             paymentCard.setAppUser(appUser);
             paymentCardRepository.save(paymentCard);
         }
+        appUser.getAppUserInfo().setFirstname(editUserProfileDto.getFirstname());
+        appUser.getAppUserInfo().setLastname(editUserProfileDto.getLastname());
+        appUser.getAppUserInfo().setBirthDate(editUserProfileDto.getBirthDate());
+        appUser.getAppUserInfo().setEmail(editUserProfileDto.getEmail());
+        appUser.getAppUserInfo().setTelNumber(editUserProfileDto.getTelNumber());
+    }
+
+    @Transactional
+    public boolean deleteUser(String userId) {
+        return appUserRepository.findAppUserById(userId)
+                .map(entity -> {
+                    appUserRepository.delete(entity);
+                    return true;
+                }).orElse(false);
     }
 }

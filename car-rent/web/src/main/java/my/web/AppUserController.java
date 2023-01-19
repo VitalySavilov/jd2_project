@@ -72,4 +72,10 @@ public class AppUserController {
         appUserService.updateUserProfile(editUserProfileDto, user.getUsername());
         return "redirect:/users/profile";
     }
+
+    @PostMapping("/{userId}/delete")
+    public String deleteUser(@PathVariable String userId) {
+        appUserService.deleteUser(userId);
+        return "redirect:/users";
+    }
 }

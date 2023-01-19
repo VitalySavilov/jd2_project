@@ -13,16 +13,6 @@
 
         <jsp:include page="_pagination.jsp"/>
 
-<%--        <div class="col-md-4">--%>
-<%--            <label for="inputMark" class="form-label">Mark</label>--%>
-<%--            <input type="text" class="form-control" name="mark" value="${filter.mark}" id="inputMark">--%>
-<%--        </div>--%>
-<%--        <div class="col-md-4">--%>
-<%--            <label for="inputType" class="form-label">Type</label>--%>
-<%--            <input type="text" class="form-control" name="type" value="${filter.type}" id="inputType">--%>
-<%--        </div>--%>
-
-        <button type="submit" class="btn btn-light">filter</button>
     </form>
 
     <table class="table">
@@ -39,8 +29,8 @@
             <tr>
                 <td><c:out value="${payment.id}"/></td>
                 <td><c:out value="${payment.appOrder.id}"/></td>
-                <td><c:out value="${payment.appOrder.car.regNumber}"/></td>
-                <td><c:out value="${payment.appOrder.appUser.appUserInfo.firstname} ${payment.appOrder.appUser.appUserInfo.lastname}"/></td>
+                <td><c:out value="${payment.appOrder.carNumber}"/></td>
+                <td><c:out value="${payment.appOrder.firstname} ${payment.appOrder.lastname}"/></td>
                 <td><c:out value="${payment.paymentDate}"/></td>
                 <td><c:out value="${payment.appOrder.sum}"/></td>
                 <td><a class="btn btn-light" href="${pageContext.request.contextPath}/payments/${payment.id}" role="button">Details</a>

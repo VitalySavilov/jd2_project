@@ -1,8 +1,9 @@
 package my.web;
 
 import lombok.RequiredArgsConstructor;
-import my.dto.car.*;
-import my.dto.filter.CarFilter;
+import my.dto.car.CarCreateDto;
+import my.dto.car.CarReadDto;
+import my.dto.car.CarStatus;
 import my.dto.page_response.PageResponse;
 import my.model.Fuel;
 import my.service.*;
@@ -26,10 +27,9 @@ public class CarController {
     private final CarTypeService carTypeService;
 
     @GetMapping
-    public String getAllCars(Model model, Pageable pageable, CarFilter filter) {
-        Page<CarReadDto> page = carService.getAll(pageable, filter);
+    public String getAllCars(Model model, Pageable pageable) {
+        Page<CarReadDto> page = carService.getAll(pageable);
         model.addAttribute("data", PageResponse.of(page));
-        model.addAttribute("filter", filter);
         return "cars";
     }
 
@@ -81,5 +81,11 @@ public class CarController {
                         .collect(Collectors.toList()));
         model.addAttribute("actualMark", actualMark);
         return "new_car";
+    }
+
+    @PostMapping("/{carId}/delete")
+    public String deleteCar(@PathVariable("carId") long carId) {
+        carService.deleteCar(carId);
+        return "redirect:/cars";
     }
 }

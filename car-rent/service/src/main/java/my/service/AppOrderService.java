@@ -11,6 +11,7 @@ import my.dto.car.CarStatus;
 import my.mapper.app_order.AppOrderDtoMapper;
 import my.model.AppOrder;
 import my.model.AppUser;
+import my.model.AppUserInfo;
 import my.model.Car;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
@@ -32,14 +33,15 @@ public class AppOrderService {
     @Transactional
     public AppOrderDto createOrder(long carId, String user, long days) {
         AppUser appUser = appUserRepository.findAppUserByUsernameEquals(user).orElseThrow();
+        AppUserInfo appUserInfo = appUser.getAppUserInfo();
         Car car = carRepository.findCarById(carId).orElseThrow();
         car.setAvailable(CarStatus.UNAVAILABLE.isAvailable());
         AppOrder appOrder = appOrderRepository.save(AppOrder.builder()
-                .appUser(appUser)
+                .appUserInfo(appUserInfo)
                 .startDate(Date.valueOf(LocalDate.now()))
                 .endDate(Date.valueOf(LocalDate.now().plusDays(days)))
                 .orderSum(car.getPrice() * days)
-                .car(car)
+                .carNumber(car.getRegNumber())
                 .build());
         return appOrderDtoMapper.mapFrom(appOrder);
     }
@@ -55,7 +57,7 @@ public class AppOrderService {
     @Transactional
     public void updateOrder(long orderId, AppOrderEditDto appOrderEditDto) {
         AppOrder appOrder = appOrderRepository.findById(orderId).orElseThrow();
-        Car car = carRepository.findCarById(appOrder.getCar().getId()).orElseThrow();
+        Car car = carRepository.findCarByRegNumber(appOrder.getCarNumber()).orElseThrow();
         if (!appOrderEditDto.getOrderStatus().isEmpty()){
             appOrder.setCompleted(OrderStatus.valueOf(appOrderEditDto.getOrderStatus()).isCompleted());
             car.setAvailable(OrderStatus.valueOf(appOrderEditDto.getOrderStatus()).isCompleted());

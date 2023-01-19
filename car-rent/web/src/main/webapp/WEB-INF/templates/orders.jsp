@@ -13,22 +13,12 @@
 
         <jsp:include page="_pagination.jsp"/>
 
-<%--        <div class="col-md-4">--%>
-<%--            <label for="inputMark" class="form-label">Mark</label>--%>
-<%--            <input type="text" class="form-control" name="mark" value="${filter.mark}" id="inputMark">--%>
-<%--        </div>--%>
-<%--        <div class="col-md-4">--%>
-<%--            <label for="inputType" class="form-label">Type</label>--%>
-<%--            <input type="text" class="form-control" name="type" value="${filter.type}" id="inputType">--%>
-<%--        </div>--%>
-
-        <button type="submit" class="btn btn-light">filter</button>
     </form>
 
     <table class="table">
         <tr>
             <th>№</th>
-            <th>Car</th>
+            <th>Car number</th>
             <th>User</th>
             <th>Status</th>
             <th>Date start</th>
@@ -39,8 +29,8 @@
         <c:forEach items="${data.content}" var="order">
             <tr>
                 <td><c:out value="${order.id}"/></td>
-                <td><c:out value="${order.car.carMark} ${order.car.carModel} ${order.car.year}"/></td>
-                <td><c:out value="${order.appUser.appUserInfo.firstname} ${order.appUser.appUserInfo.lastname}"/></td>
+                <td><c:out value="${order.carNumber}"/></td>
+                <td><c:out value="${order.firstname} ${order.lastname}"/></td>
                 <td><c:out value="${order.status}"/></td>
                 <td><c:out value="${order.startDate}"/></td>
                 <td><c:out value="${order.endDate}"/></td>

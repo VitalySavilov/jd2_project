@@ -24,15 +24,15 @@
                 </tr>
                 <tr>
                     <th scope="row">Car number</th>
-                    <td>${payment.appOrder.car.regNumber}</td>
+                    <td>${payment.appOrder.carNumber}</td>
                 </tr>
                 <tr>
                     <th scope="row">Firstname</th>
-                    <td>${payment.appOrder.appUser.appUserInfo.firstname}</td>
+                    <td>${payment.appOrder.firstname}</td>
                 </tr>
                 <tr>
                     <th scope="row">Lastname</th>
-                    <td>${payment.appOrder.appUser.appUserInfo.lastname}</td>
+                    <td>${payment.appOrder.lastname}</td>
                 </tr>
                 <tr>
                     <th scope="row">Date</th>
@@ -61,9 +61,6 @@
                         <th scope="row">Add role</th>
                         <td>
                             <div class="col-md-6">
-
-
-
                             </div>
                         </td>
                     </tr>
@@ -71,9 +68,6 @@
                         <th scope="row">Delete role</th>
                         <td>
                             <div class="col-md-6">
-
-
-
                             </div>
                         </td>
                     </tr>

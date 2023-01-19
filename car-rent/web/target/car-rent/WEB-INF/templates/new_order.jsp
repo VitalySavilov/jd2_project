@@ -24,15 +24,15 @@
                 </tr>
                 <tr>
                     <th scope="row">Car</th>
-                    <td>${userOrder.car.carMark} ${userOrder.car.carModel} ${userOrder.car.year}</td>
+                    <td>${car.carMark} ${car.carModel} ${car.year}</td>
                 </tr>
                 <tr>
                     <th scope="row">Color</th>
-                    <td>${userOrder.car.color}</td>
+                    <td>${car.color}</td>
                 </tr>
                 <tr>
                     <th scope="row">Type</th>
-                    <td>${userOrder.car.type}</td>
+                    <td>${car.type}</td>
                 </tr>
                 <tr>
                     <th scope="row">startDate</th>

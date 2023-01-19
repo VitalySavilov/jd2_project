@@ -1,6 +1,6 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn" %>
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 <%@ taglib prefix="security" uri="http://www.springframework.org/security/tags" %>
 
 <jsp:include page="_header.jsp"/>
@@ -74,15 +74,44 @@
                 </tbody>
             </table>
 
-            <form action="${pageContext.request.contextPath}/orders/order?carId=${car.id}" method="post">
+            <security:authorize access="isAuthenticated()">
 
-                <div class="col-md-4">
-                    <label for="inputMark" class="form-label">Days</label>
-                    <input type="number" class="form-control" name="days" value="1" id="inputMark">
-                </div>
+                <form action="${pageContext.request.contextPath}/orders/order?carId=${car.id}" method="post">
 
-                <button type="submit" class="btn btn-light">Checkout</button>
-            </form>
+<%--                    <div class="col-md-4">--%>
+<%--                        <label for="inputMark" class="form-label">Days</label>--%>
+<%--                        <input type="number" class="form-control" name="days" value="1" id="inputMark">--%>
+<%--                    </div>--%>
+
+<%--                    <div class="col-md-4">--%>
+<%--                        <button type="submit" class="btn btn-light">Checkout</button>--%>
+<%--                    </div>--%>
+
+                    <table class="table">
+                        <thead>
+                        <tr>
+                            <th scope="col">Days:</th>
+                            <th scope="col">Order a car:</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr>
+                            <th scope="row">
+                                <div class="col-md-4">
+                                    <input type="number" class="form-control" name="days" value="1">
+                                </div>
+                            </th>
+                            <td>
+                                <div class="col-md-4">
+                                    <button type="submit" class="btn btn-secondary">Checkout</button>
+                                </div>
+                            </td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </form>
+
+            </security:authorize>
 
         </div>
     </div>

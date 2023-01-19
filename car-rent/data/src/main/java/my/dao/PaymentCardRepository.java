@@ -11,4 +11,5 @@ public interface PaymentCardRepository extends CrudRepository<PaymentCard, Long>
     Optional<List<PaymentCard>> findPaymentCardByAppUser_Username(String username);
 
     Optional<List<PaymentCard>> findPaymentCardByAppUser_Id(String id);
+
 }

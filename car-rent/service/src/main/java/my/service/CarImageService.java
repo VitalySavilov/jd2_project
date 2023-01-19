@@ -3,14 +3,11 @@ package my.service;
 import lombok.RequiredArgsConstructor;
 import my.dao.CarImageRepository;
 import my.dao.CarRepository;
-import my.model.Car;
 import my.model.CarImage;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import java.util.ArrayList;
 import java.util.List;
-import java.util.stream.Collectors;
 
 @Service
 @Transactional(readOnly = true)

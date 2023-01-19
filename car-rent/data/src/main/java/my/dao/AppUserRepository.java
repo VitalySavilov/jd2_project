@@ -10,21 +10,12 @@ import java.util.Optional;
 
 public interface AppUserRepository extends CrudRepository<AppUser, String> {
 
-    @EntityGraph(attributePaths = {
-            "roles",
-            "appUserInfo"
-    })
+    @EntityGraph(attributePaths = {"roles", "appUserInfo"})
     Optional<AppUser> findAppUserByUsernameEquals(String username);
 
-    @EntityGraph(attributePaths = {
-            "roles",
-            "appUserInfo"
-    })
+    @EntityGraph(attributePaths = {"roles", "appUserInfo"})
     Page<AppUser> findAll(Pageable pageable);
 
-    @EntityGraph(attributePaths = {
-            "roles",
-            "appUserInfo"
-    })
+    @EntityGraph(attributePaths = {"roles", "appUserInfo"})
     Optional<AppUser> findAppUserById(String id);
 }

@@ -120,9 +120,17 @@
                 </tbody>
             </table>
 
-            <button type="submit" class="btn btn-secondary">Apply</button>
+            <div>
+                <button type="submit" class="btn btn-secondary">Apply</button>
+            </div>
 
-            <button type="submit" name="" class="btn btn-secondary">Delete this car</button>
+        </form>
+
+        <form method="post" action="${pageContext.request.contextPath}/cars/${car.id}/delete" class="row g-3">
+
+            <div>
+                <button type="submit" class="btn btn-secondary">Delete car</button>
+            </div>
 
         </form>
     </div>

@@ -33,22 +33,19 @@ public class Car {
     private Double fuelConsumption;
     @Column(name = "C_POWER")
     private Long power;
-    @ManyToOne(cascade = CascadeType.ALL)
+    @ManyToOne(cascade = CascadeType.PERSIST)
     @JoinColumn(name = "T_ID")
     private CarType type;
-    @ManyToOne(cascade = CascadeType.ALL, optional = false)
+    @ManyToOne(cascade = CascadeType.PERSIST, optional = false)
     @JoinColumn(name = "M_ID")
     private CarModel carModel;
-    @ManyToOne(cascade = CascadeType.ALL, optional = false)
+    @ManyToOne(cascade = CascadeType.PERSIST, optional = false)
     @JoinColumn(name = "MARK_ID")
     private CarMark carMark;
     @OneToMany(cascade = CascadeType.ALL)
     @JoinColumn(name = "C_ID")
     @Builder.Default
     private List<CarImage> images = new ArrayList<>();
-    @OneToMany(mappedBy = "car")
-    @Builder.Default
-    private List<AppOrder> orders = new ArrayList<>();
     @Builder.Default
     @Column(name = "C_IS_AVAILABLE")
     private boolean isAvailable = true;

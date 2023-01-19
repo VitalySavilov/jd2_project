@@ -182,16 +182,13 @@
                 O_START        date                  NULL,
                 O_END          date                  NULL,
                 O_SUM          DOUBLE                NULL,
-                USER_ID        VARCHAR(255)          NULL,
-                C_ID           BIGINT                NULL,
+                O_CAR_NUM      VARCHAR(255)          NULL,
+                INFO_ID        BIGINT                NULL,
                 CONSTRAINT pk_t_app_order PRIMARY KEY (O_ID)
             );
 
             ALTER TABLE t_app_order
-                ADD CONSTRAINT FK_T_APP_ORDER_ON_C FOREIGN KEY (C_ID) REFERENCES t_car (C_ID);
-
-            ALTER TABLE t_app_order
-                ADD CONSTRAINT FK_T_APP_ORDER_ON_USER FOREIGN KEY (USER_ID) REFERENCES t_user (USER_ID);
+                ADD CONSTRAINT FK_T_APP_ORDER_ON_INFO FOREIGN KEY (INFO_ID) REFERENCES t_user_info (INFO_ID);
 
         </sql>
     </changeSet>

@@ -12,7 +12,7 @@ public class AppUserCreateMapper implements Mapper<AppUserCreateDto, AppUser> {
 
     @Override
     public AppUser mapFrom(AppUserCreateDto object) {
-        AppUser appUser = AppUser.builder()
+        return AppUser.builder()
                 .appUserInfo(AppUserInfo.builder()
                         .firstname(object.getFirstname())
                         .lastname(object.getLastname())
@@ -23,6 +23,5 @@ public class AppUserCreateMapper implements Mapper<AppUserCreateDto, AppUser> {
                 .username(object.getUsername())
                 .password(object.getPassword())
                 .build();
-        return appUser;
     }
 }
