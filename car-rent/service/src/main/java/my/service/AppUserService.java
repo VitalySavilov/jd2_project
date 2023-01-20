@@ -111,4 +111,8 @@ public class AppUserService {
                     return true;
                 }).orElse(false);
     }
+
+    public long getAppUserCount() {
+        return appUserRepository.count();
+    }
 }

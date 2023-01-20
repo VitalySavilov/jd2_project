@@ -1,6 +1,7 @@
 package my.dto.app_user;
 
 import lombok.Value;
+import my.dto.role.RoleDto;
 import my.model.*;
 
 import java.util.List;
@@ -10,5 +11,5 @@ public class AppUserReadDto {
     String id;
     AppUserInfo appUserInfo;
     String username;
-    List<AppUserRole> roles;
+    List<RoleDto> roles;
 }

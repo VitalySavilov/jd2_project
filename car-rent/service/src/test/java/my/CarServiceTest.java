@@ -46,7 +46,7 @@ public class CarServiceTest {
     }
 
     @Test
-    public void deleteCad() {
+    public void deleteCar() {
         carRepository.deleteById(1l);
     }
 

@@ -7,11 +7,7 @@
 
     <h1>Users</h1>
 
-    <form action="${url}">
-
         <jsp:include page="_pagination.jsp"/>
-
-    </form>
 
     <table style="width:100%" class="table">
         <tr>

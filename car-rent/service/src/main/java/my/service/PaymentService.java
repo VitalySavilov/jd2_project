@@ -44,4 +44,8 @@ public class PaymentService {
                 .map(paymentReadMapper::mapFrom)
                 .orElseThrow();
     }
+
+    public long getPaymentCount() {
+        return paymentRepository.count();
+    }
 }

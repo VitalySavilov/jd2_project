@@ -5,10 +5,12 @@ import my.dto.app_user.AppUserCreateDto;
 import my.mapper.Mapper;
 import my.model.AppUser;
 import my.model.AppUserInfo;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Component;
 @Component
 @RequiredArgsConstructor
 public class AppUserCreateMapper implements Mapper<AppUserCreateDto, AppUser> {
+    private final PasswordEncoder passwordEncoder;
 
     @Override
     public AppUser mapFrom(AppUserCreateDto object) {
@@ -21,7 +23,7 @@ public class AppUserCreateMapper implements Mapper<AppUserCreateDto, AppUser> {
                         .telNumber(object.getTelNumber())
                         .build())
                 .username(object.getUsername())
-                .password(object.getPassword())
+                .password(passwordEncoder.encode(object.getPassword()))
                 .build();
     }
 }

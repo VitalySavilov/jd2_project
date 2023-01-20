@@ -1,5 +1,6 @@
 package my.model;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
 import lombok.*;
 
 import javax.persistence.*;
@@ -22,6 +23,7 @@ public class AppUserInfo {
     @Column(name = "INFO_U_LASTNAME")
     private String lastname;
     @Column(name = "INFO_U_BIRTHDATE")
+    @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd")
     private Date birthDate;
     @Column(name = "INFO_U_EMAIL")
     private String email;

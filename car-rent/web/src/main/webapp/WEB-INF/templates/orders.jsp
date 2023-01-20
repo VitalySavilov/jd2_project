@@ -9,11 +9,7 @@
         <h1>Orders</h1>
     </div>
 
-    <form action="${url}">
-
         <jsp:include page="_pagination.jsp"/>
-
-    </form>
 
     <table class="table">
         <tr>

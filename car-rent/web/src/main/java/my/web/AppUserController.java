@@ -57,7 +57,7 @@ public class AppUserController {
     @PostMapping("/user")
     public String createUser(AppUserCreateDto appUserCreateDto) {
         appUserService.create(appUserCreateDto);
-        return "redirect:/";
+        return "redirect:/login";
     }
 
     @GetMapping("/profile")

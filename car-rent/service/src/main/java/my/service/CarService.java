@@ -59,7 +59,6 @@ public class CarService {
     public void updateCar(long carId, CarReadDto carReadDto) {
         Car car = carRepository.findCarById(carId).orElseThrow();
         car.setPrice(carReadDto.getPrice());
-
         if (CarStatus.AVAILABLE.name().equals(carReadDto.getStatus())
                 || CarStatus.UNAVAILABLE.name().equals(carReadDto.getStatus())) {
             car.setAvailable(CarStatus.valueOf(carReadDto.getStatus()).isAvailable());

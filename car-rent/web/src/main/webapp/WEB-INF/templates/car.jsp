@@ -78,19 +78,10 @@
 
                 <form action="${pageContext.request.contextPath}/orders/order?carId=${car.id}" method="post">
 
-<%--                    <div class="col-md-4">--%>
-<%--                        <label for="inputMark" class="form-label">Days</label>--%>
-<%--                        <input type="number" class="form-control" name="days" value="1" id="inputMark">--%>
-<%--                    </div>--%>
-
-<%--                    <div class="col-md-4">--%>
-<%--                        <button type="submit" class="btn btn-light">Checkout</button>--%>
-<%--                    </div>--%>
-
                     <table class="table">
                         <thead>
                         <tr>
-                            <th scope="col">Days:</th>
+                            <th scope="col">Rental period (days):</th>
                             <th scope="col">Order a car:</th>
                         </tr>
                         </thead>

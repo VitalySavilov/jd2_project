@@ -29,6 +29,9 @@
                 </li>
                 <security:authorize access="hasRole('ADMIN')">
                     <li class="nav-item">
+                        <a class="nav-link" href="${pageContext.request.contextPath}/cars/car">Add car</a>
+                    </li>
+                    <li class="nav-item">
                         <a class="nav-link" href="${pageContext.request.contextPath}/users">Users</a>
                     </li>
                     <li class="nav-item">
@@ -37,9 +40,15 @@
                     <li class="nav-item">
                         <a class="nav-link" href="${pageContext.request.contextPath}/payments">Payments</a>
                     </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="${pageContext.request.contextPath}/users/user">Registration</a>
+                    </li>
                 </security:authorize>
                 <li class="nav-item">
-                    <a class="nav-link" href="${pageContext.request.contextPath}/users/user">Registration</a>
+                    <security:authorize access="isAuthenticated()">
+                        <a class="nav-link" href="${pageContext.request.contextPath}/users/profile"><security:authentication
+                                property="name"/></a>
+                    </security:authorize>
                 </li>
                 <li class="nav-item">
                     <security:authorize access="isAuthenticated()">
@@ -50,12 +59,6 @@
                     </security:authorize>
                 </li>
             </ul>
-            <security:authorize access="isAuthenticated()">
-
-                <a class="nav-link" href="${pageContext.request.contextPath}/users/profile"><security:authentication
-                        property="name"/></a>
-
-            </security:authorize>
         </div>
     </div>
 </nav>

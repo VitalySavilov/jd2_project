@@ -137,7 +137,7 @@
                 </tbody>
             </table>
 
-            <button type="submit" class="btn btn-primary">Add car</button>
+            <button type="submit" class="btn btn-secondary">Add car</button>
 
         </form>
 

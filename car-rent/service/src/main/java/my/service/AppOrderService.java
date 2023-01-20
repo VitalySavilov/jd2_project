@@ -63,4 +63,8 @@ public class AppOrderService {
             car.setAvailable(OrderStatus.valueOf(appOrderEditDto.getOrderStatus()).isCompleted());
         }
     }
+
+    public long getAppOrderCount() {
+        return appOrderRepository.count();
+    }
 }

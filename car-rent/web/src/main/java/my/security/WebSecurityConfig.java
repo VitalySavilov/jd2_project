@@ -10,6 +10,8 @@ import org.springframework.security.config.annotation.authentication.builders.Au
 import org.springframework.security.config.annotation.method.configuration.EnableGlobalMethodSecurity;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
+import org.springframework.security.crypto.factory.PasswordEncoderFactories;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.web.SecurityFilterChain;
 
 @Configuration
@@ -25,7 +27,10 @@ public class WebSecurityConfig {
                 .antMatchers(HttpMethod.POST, "/add*").hasRole("ADMIN")
                 .and()
                 .csrf().disable()
-                .formLogin();
+                .formLogin(login -> login
+                        .loginPage("/login")
+                        .defaultSuccessUrl("/cars")
+                        .permitAll());
         return http.build();
     }
 
@@ -33,6 +38,11 @@ public class WebSecurityConfig {
     public void configureGlobalSecurity(AuthenticationManagerBuilder auth,
                                         @Qualifier("authService") AuthenticationService service) throws Exception {
         auth.userDetailsService(service);
+    }
+
+    @Bean
+    public PasswordEncoder passwordEncoder() {
+        return PasswordEncoderFactories.createDelegatingPasswordEncoder();
     }
 }
 

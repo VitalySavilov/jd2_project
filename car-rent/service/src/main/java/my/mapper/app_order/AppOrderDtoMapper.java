@@ -1,6 +1,5 @@
 package my.mapper.app_order;
 
-import lombok.RequiredArgsConstructor;
 import my.dto.app_order.AppOrderDto;
 import my.dto.app_order.OrderStatus;
 import my.mapper.Mapper;
@@ -8,7 +7,6 @@ import my.model.AppOrder;
 import org.springframework.stereotype.Component;
 
 @Component
-@RequiredArgsConstructor
 public class AppOrderDtoMapper implements Mapper<AppOrder, AppOrderDto> {
     @Override
     public AppOrderDto mapFrom(AppOrder object) {
