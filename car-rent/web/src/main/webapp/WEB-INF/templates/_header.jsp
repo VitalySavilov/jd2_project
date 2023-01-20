@@ -41,7 +41,7 @@
                         <a class="nav-link" href="${pageContext.request.contextPath}/payments">Payments</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="${pageContext.request.contextPath}/users/user">Registration</a>
+                        <a class="nav-link" href="${pageContext.request.contextPath}/users/user">Add user</a>
                     </li>
                 </security:authorize>
                 <li class="nav-item">
