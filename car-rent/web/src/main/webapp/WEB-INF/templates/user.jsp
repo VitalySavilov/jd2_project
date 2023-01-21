@@ -62,9 +62,7 @@
             </table>
         </div>
         <div class="col align-self-start">
-
             <form method="post" action="${pageContext.request.contextPath}/users/${user.id}/update" class="row g-3">
-
                 <table class="table">
                     <thead>
                     <tr>
@@ -103,12 +101,11 @@
                 </table>
                 <button type="submit" class="btn btn-secondary">Apply</button>
             </form>
-
-            <form method="post" action="${pageContext.request.contextPath}/users/${user.id}/delete" class="row g-3">
-
-                <button type="submit" class="btn btn-secondary">Delete user</button>
-
-            </form>
+            <div class="row">
+                <form method="post" action="${pageContext.request.contextPath}/users/${user.id}/delete" class="row g-3">
+                    <button type="submit" class="btn btn-secondary">Delete user</button>
+                </form>
+            </div>
         </div>
     </div>
 </div>

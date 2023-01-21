@@ -1,10 +1,7 @@
 package my.service;
 
 import lombok.RequiredArgsConstructor;
-import my.dao.CarMarkRepository;
-import my.dao.CarModelRepository;
-import my.dao.CarRepository;
-import my.dao.CarTypeRepository;
+import my.dao.*;
 import my.dto.car.CarCreateDto;
 import my.dto.car.CarReadDto;
 import my.dto.car.CarStatus;
@@ -56,12 +53,14 @@ public class CarService {
     }
 
     @Transactional
-    public void updateCar(long carId, CarReadDto carReadDto) {
+    public void updateCar(long carId, CarCreateDto carCreateDto) {
         Car car = carRepository.findCarById(carId).orElseThrow();
-        car.setPrice(carReadDto.getPrice());
-        if (CarStatus.AVAILABLE.name().equals(carReadDto.getStatus())
-                || CarStatus.UNAVAILABLE.name().equals(carReadDto.getStatus())) {
-            car.setAvailable(CarStatus.valueOf(carReadDto.getStatus()).isAvailable());
+        car.setPrice(carCreateDto.getPrice());
+        List<CarImage> images = carImageCreateMapper.mapFrom(carCreateDto);
+        car.getImages().addAll(images);
+        if (CarStatus.AVAILABLE.name().equals(carCreateDto.getStatus())
+                || CarStatus.UNAVAILABLE.name().equals(carCreateDto.getStatus())) {
+            car.setAvailable(CarStatus.valueOf(carCreateDto.getStatus()).isAvailable());
         }
     }
 
@@ -86,4 +85,5 @@ public class CarService {
     public long getCarCount() {
         return carRepository.count();
     }
+
 }

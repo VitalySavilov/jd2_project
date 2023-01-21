@@ -46,9 +46,7 @@
             </table>
         </div>
         <div class="col align-self-start">
-
-            <form method="post" action="${url}" class="row g-3">
-
+            <form method="post" action="${pageContext.request.contextPath}/payments/${payment.id}/delete" class="row g-3">
                 <table class="table">
                     <thead>
                     <tr>
@@ -58,29 +56,17 @@
                     </thead>
                     <tbody>
                     <tr>
-                        <th scope="row">Add role</th>
+                        <th scope="row">Delete payment</th>
                         <td>
-                            <div class="col-md-6">
-                            </div>
-                        </td>
-                    </tr>
-                    <tr>
-                        <th scope="row">Delete role</th>
-                        <td>
-                            <div class="col-md-6">
-                            </div>
+                            <button type="submit" class="btn btn-secondary">Apply</button>
                         </td>
                     </tr>
                     </tbody>
                 </table>
-
-                <button type="submit" class="btn btn-secondary">Apply</button>
-
             </form>
         </div>
     </div>
 </div>
-
 
 <jsp:include page="_footer.jsp"/>
 

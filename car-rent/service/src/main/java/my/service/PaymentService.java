@@ -48,4 +48,12 @@ public class PaymentService {
     public long getPaymentCount() {
         return paymentRepository.count();
     }
+
+    @Transactional
+    public boolean deletePayment(long paymentId) {
+        return paymentRepository.findById(paymentId).map(entity -> {
+            paymentRepository.delete(entity);
+            return true;
+        }).orElse(false);
+    }
 }

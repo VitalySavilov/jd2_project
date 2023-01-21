@@ -6,10 +6,6 @@
 <jsp:include page="_header.jsp"/>
 
 <div class="container">
-    <div class="row justify-content-center">
-        <h1>${car.carMark} ${car.carModel} ${car.year}</h1>
-    </div>
-
     <div class="row">
         <div class="col align-self-start">
             <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
@@ -37,105 +33,101 @@
                     <span class="visually-hidden">Prev</span>
                 </button>
             </div>
+<%--            <div class="row">--%>
+<%--                <form method="post" action="${pageContext.request.contextPath}/cars/${car.id}/images/delete"--%>
+<%--                      class="row g-3">--%>
+<%--                    <button type="submit" class="btn btn-secondary">Delete all images</button>--%>
+<%--                </form>--%>
+<%--            </div>--%>
         </div>
         <div class="col align-self-center">
-            <table class="table">
-                <thead>
-                <tr>
-                    <th scope="col">Description:</th>
-                    <th scope="col"></th>
-                </tr>
-                </thead>
-                <tbody>
-                <tr>
-                    <th scope="row">Status</th>
-                    <td>${car.status}</td>
-                </tr>
-                <tr>
-                    <th scope="row">Type</th>
-                    <td>${car.type}</td>
-                </tr>
-                <tr>
-                    <th scope="row">Color</th>
-                    <td>${car.color}</td>
-                </tr>
-                <tr>
-                    <th scope="row">Power</th>
-                    <td>${car.power}</td>
-                </tr>
-                <tr>
-                    <th scope="row">Fuel</th>
-                    <td>${car.fuelType}</td>
-                </tr>
-                <tr>
-                    <th scope="row">Consumption</th>
-                    <td>${car.fuelConsumption}</td>
-                </tr>
-                <tr>
-                    <th scope="row">Price</th>
-                    <td>${car.price}</td>
-                </tr>
-                </tbody>
-            </table>
+            <div class="row">
+                <form method="post" enctype="multipart/form-data" action="${pageContext.request.contextPath}/cars/car/${car.id}/update"
+                      class="row g-3">
+                    <div class="row justify-content-center">
+                        <h1>${car.carMark} ${car.carModel} ${car.year}</h1>
+                    </div>
+                    <table class="table">
+                        <tbody>
+                        <tr>
+                            <th scope="row">Status</th>
+                            <td>
+                                <div class="col-md-8">
+                                    <label>
+                                        <select class="form-select" name="status" autocomplete="off">
+                                            <option selected value="${car.status}">${car.status}</option>
+                                            <c:forEach items="${statusList}" var="status">
+                                                <option value="${status}">${status}</option>
+                                            </c:forEach>
+                                        </select>
+                                    </label>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Type</th>
+                            <td>${car.type}</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Color</th>
+                            <td>${car.color}</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Power</th>
+                            <td>${car.power}</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Fuel</th>
+                            <td>${car.fuelType}</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Consumption</th>
+                            <td>${car.fuelConsumption}</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Price</th>
+                            <td>
+                                <div class="col-md-4">
+                                    <input step="1" value="${car.price}" type="number" name="price" id="price"
+                                           class="form-control">
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Add images</th>
+                            <td>
+                                <div class="col-md-6">
+                                    <input type="file" name="files" class="form-control" id="img" multiple>
+                                </div>
+                            </td>
+                        </tr>
+                        </tbody>
+                    </table>
+                    <div class="container">
+                        <div class="row">
+                            <button type="submit" class="btn btn-secondary">Apply</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="row">
+                <form method="post" action="${pageContext.request.contextPath}/cars/${car.id}/images/delete"
+                      class="row g-3">
+                    <button type="submit" class="btn btn-secondary">Delete all images</button>
+                </form>
+            </div>
         </div>
     </div>
-</div>
 
-<div class="container">
-    <div class="col align-self-start">
-
-        <form method="post" action="${pageContext.request.contextPath}/cars/car/${car.id}/update" class="row g-3">
-
-            <table class="table">
-                <thead>
-                <tr>
-                    <th scope="col"><h2>Edit car:</h2></th>
-                    <th scope="col"></th>
-                </tr>
-                </thead>
-                <tbody>
-                <tr>
-                    <th scope="row">Select status</th>
-                    <td>
-                        <div class="col-md-8">
-                            <label>
-                                <select class="form-select" name="status" autocomplete="off">
-                                    <option selected></option>
-                                    <c:forEach items="${statusList}" var="status">
-                                        <option value="${status}">${status}</option>
-                                    </c:forEach>
-                                </select>
-                            </label>
-                        </div>
-                    </td>
-                </tr>
-                <tr>
-                    <th scope="row">Price</th>
-                    <td>
-                        <div class="col-md-4">
-                            <input step="1" value="${car.price}" type="number" name="price" id="price" class="form-control">
-                        </div>
-                    </td>
-                </tr>
-                </tbody>
-            </table>
-
-            <div>
-                <button type="submit" class="btn btn-secondary">Apply</button>
-            </div>
-
-        </form>
-
-        <form method="post" action="${pageContext.request.contextPath}/cars/${car.id}/delete" class="row g-3">
-
-            <div>
-                <button type="submit" class="btn btn-secondary">Delete car</button>
-            </div>
-
+    <div class="row">
+        <form method="post" action="${pageContext.request.contextPath}/cars/${car.id}/delete"
+              class="row g-3">
+            <button type="submit" class="btn btn-secondary">Delete car</button>
         </form>
     </div>
 </div>
 
 <jsp:include page="_footer.jsp"/>
+
 
 

@@ -28,7 +28,7 @@ public class PaymentController {
 
     @PostMapping("/payment")
     public String createPayment(long orderId, Model model) {
-        model.addAttribute("payment" , paymentService.createPayment(orderId));
+        model.addAttribute("payment", paymentService.createPayment(orderId));
         return "payment_check";
     }
 
@@ -36,5 +36,11 @@ public class PaymentController {
     public String getPayment(@PathVariable long paymentId, Model model) {
         model.addAttribute("payment", paymentService.getPaymentById(paymentId));
         return "payment";
+    }
+
+    @PostMapping("/{paymentId}/delete")
+    public String deletePayment(@PathVariable long paymentId) {
+        paymentService.deletePayment(paymentId);
+        return "redirect:/payments";
     }
 }

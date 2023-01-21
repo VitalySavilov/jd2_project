@@ -24,7 +24,17 @@ public class WebSecurityConfig {
         http
                 .authorizeRequests()
                 .antMatchers("/").permitAll()
-                .antMatchers(HttpMethod.POST, "/add*").hasRole("ADMIN")
+                .antMatchers("/login**").permitAll()
+                .antMatchers("/users/user").permitAll()
+                .antMatchers("/users/profile**").hasAnyRole("ADMIN", "USER")
+                .antMatchers("/users**").hasRole("ADMIN")
+                .antMatchers(HttpMethod.GET, "/cars").permitAll()
+                .antMatchers(HttpMethod.GET, "/cars/{\\d+}").permitAll()
+                .antMatchers("/cars**").hasRole("ADMIN")
+                .antMatchers(HttpMethod.POST, "/orders/order").hasAnyRole("ADMIN", "USER")
+                .antMatchers("/orders**").hasRole("ADMIN")
+                .antMatchers(HttpMethod.POST, "/payments/payment").hasAnyRole("ADMIN", "USER")
+                .antMatchers("/payments**").hasRole("ADMIN")
                 .and()
                 .csrf().disable()
                 .formLogin(login -> login

@@ -6,10 +6,6 @@
 <jsp:include page="_header.jsp"/>
 
 <div class="container">
-    <div class="row justify-content-center">
-        <h1>${car.carMark} ${car.carModel} ${car.year}</h1>
-    </div>
-
     <div class="row">
         <div class="col align-self-start">
             <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
@@ -39,6 +35,9 @@
             </div>
         </div>
         <div class="col align-self-center">
+            <div class="row justify-content-center">
+                <h1>${car.carMark} ${car.carModel} ${car.year}</h1>
+            </div>
             <table class="table">
                 <thead>
                 <tr>

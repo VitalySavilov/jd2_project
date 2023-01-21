@@ -46,6 +46,12 @@ public class CarController {
         return carImageService.getImageById(imageId).getImage();
     }
 
+    @PostMapping("/{carId}/images/delete")
+    public String deleteCarImages(@PathVariable("carId") long carId) {
+        carImageService.deleteCarImages(carId);
+        return "redirect:/cars/car/{carId}";
+    }
+
     @GetMapping("/car/{carId}")
     public String getCarForUpdate(@PathVariable("carId") long carId, Model model) {
         model.addAttribute("car", carService.getCarById(carId));
@@ -58,8 +64,8 @@ public class CarController {
     }
 
     @PostMapping("/car/{carId}/update")
-    public String updateCar(@PathVariable("carId") long carId, CarReadDto carReadDto) {
-        carService.updateCar(carId, carReadDto);
+    public String updateCar(@PathVariable("carId") long carId, CarCreateDto carCreateDto) {
+        carService.updateCar(carId, carCreateDto);
         return "redirect:/cars/car/{carId}";
     }
 
