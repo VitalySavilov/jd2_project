@@ -1,4 +1,14 @@
 
-Homepage URL:
+ADMIN:
 
-http://localhost:8080/tiles/
+login: ivan
+
+password: ivan
+
+
+USER:
+
+login: pavel
+
+password: pavel
+
